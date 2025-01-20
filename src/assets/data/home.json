@@ -1,0 +1,109 @@
+[
+    {
+        "id": "commercial-zone",
+        "children": [
+            {
+                "id": "mining",
+                "heading": "Mining",
+                "child": [
+                    {
+                        "subchild": [
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "John Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Mining",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "Mining",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Save Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "steel",
+                "heading": "Steel",
+                "child": [
+                    {
+                        "subchild": [
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "John Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Mining",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "Mining",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Save Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "our-companies",
+                "heading": "Our Companies",
+                "child": [
+                    {
+                        "subchild": [
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "John Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Mining",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "Mining",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            },
+                            {
+                                "title": "Extracting useful materials from the earth",
+                                "infographic": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/Icons+for+mills.svg",
+                                "name": "Save Mine",
+                                "desc": "Mining is the extraction of valuable minerals or other geological materials from the earth",
+                                "button": "View Mines",
+                                "carouselimg": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/commercial_zone_mining1.jpg"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

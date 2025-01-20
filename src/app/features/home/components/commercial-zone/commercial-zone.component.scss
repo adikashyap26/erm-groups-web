@@ -1,0 +1,50 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+.carousel-content{
+    display: flex;
+}
+.carousel{
+    margin-top: 3%;
+}
+.slide{
+    display: flex;
+}
+.slide>div{
+    padding-right: 1%;
+}
+h3, span{
+    color: var(--erm-secondary-color);
+}
+p{
+    color: var(--erm-accent-font-color);
+}
+::ng-deep .mat-mdc-tab-body-content{
+    overflow: hidden !important;
+}
+::ng-deep .mat-mdc-tab-labels{
+    width: 60%;
+    float: right;
+}
+::ng-deep .mat-mdc-tab-group{
+    margin-top: -4%;
+}
+.infographic{
+    height: 100px;
+}
+
+
+.loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #999;
+    padding: 20px;
+  }
+  
+  .no-data-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 20px;
+  }

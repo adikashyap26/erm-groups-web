@@ -1,0 +1,15 @@
+<div class="main-container py-5" *ngIf="aboutData">
+    <div class="container">
+        <div class="row">
+            <h2>{{aboutData[0].title}}</h2>
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12">
+                <div *ngFor="let item of aboutData[0].lists">
+                    <p>{{item.list_description}}</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{aboutData[0].thumbnail}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>

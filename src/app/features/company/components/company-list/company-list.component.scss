@@ -1,0 +1,25 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+h3{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+img{
+    box-shadow: 0px 3px 6px #9d9d9d;
+    border-radius: 22px;
+}
+p{
+    color: var(--erm-accent-font-color);
+}
+a{
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--erm-secondary-color) !important;
+}
+hr{
+    margin: 30px 0;
+}

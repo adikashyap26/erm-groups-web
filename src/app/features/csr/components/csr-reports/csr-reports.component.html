@@ -1,0 +1,23 @@
+<div class="main-container my-5" *ngIf="reportsData">
+    <div class="container py-4">
+        <div class="row">
+            <h2>Latest Sustainability Reports</h2>
+            <div class="col-xl-9 col-lg-9 m-auto content mt-3" *ngFor="let item of reportsData">
+                <div class="d-flex align-items-center">
+                    <img src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                    <div class="ms-3">
+                        <h5><strong>{{item.report_name}}</strong></h5>
+                        <p><strong>{{item.year}}</strong></p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span (click)="onClickDonwload(item._id)">Download &DownArrowBar;</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button (click)="onClickViewReport()">View more reports</button>
+            </div>
+        </div>
+    </div>
+</div>

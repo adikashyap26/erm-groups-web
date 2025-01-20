@@ -1,0 +1,32 @@
+<div class="main-container py-4" *ngIf="messageData">
+    <div class="container">
+        <div class="row">
+            <h2 class="mb-4">{{messageData[0].section_title}}</h2>
+            <div class="col-lg-7 col-xl-7">
+                <div class="d-flex">
+                    <img class="chairman-img" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnail}}" alt="">
+                    <div class="bg-message2">
+                        <div class="text-white bg-message pt-3 px-3" [ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/images/about/manufacture.png)'}"
+                        >
+                            <h3>{{messageData[0].chairman_name}}</h3>
+                            <p class="mb-1">{{messageData[0].chairman_position}}</p>
+                        </div>
+                        <img class="message-img2" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilThree}}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-xl-5">
+                <div class="d-flex align-items-start message-content p-3">
+                    <img class="img-fluid apostrope-img" src="images/icons/Vector.svg" alt="">
+                    <div class="ms-3 p-1">
+                        <p>{{messageData[0].chairman_description}}</p>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <img class="img-fluid imag-mes" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilFour}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

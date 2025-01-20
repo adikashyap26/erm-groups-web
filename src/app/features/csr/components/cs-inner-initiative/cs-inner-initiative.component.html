@@ -1,0 +1,16 @@
+<div class="main-container py-5 my-4" *ngIf="filtercsrInitiative" 
+[ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/' + filtercsrInitiative.thumbnail + ')'}">
+<div class="overlay"></div>
+    <div class="container text-white position-relative">
+        <div class="row">
+            <h2 class="mb-4">{{filtercsrInitiative.title}}</h2>
+            <div class="content" *ngFor="let item of filtercsrInitiative.lists">
+                <div class="d-flex align-items-start">
+                    <img class="img-fluid mt-2 me-2" src="images/icons/red.svg"
+                    alt="">
+                    <p>{{item.list_description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

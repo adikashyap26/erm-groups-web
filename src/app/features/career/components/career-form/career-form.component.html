@@ -1,0 +1,122 @@
+
+<div *ngIf="spinner" class="spinner-overlay">
+    <mat-spinner></mat-spinner>
+</div>
+
+
+
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12">
+                <h2>Send in your resume and we will get in touch with you</h2>
+                <p>If you are a professional with expertise in the fields of <span>mining, steel or
+                        manufacturing,</span> fill in the following details and drop in your resume for us to review.
+                </p>
+                <div class="form-container pt-4">
+                    <form method="POST" [formGroup]="careerForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                        <div>
+                            <label for="first_name">First Name</label>
+                            <div class="form-content">
+                                <input type="text" name="first_name" placeholder="Rahul"
+                                    formControlName="first_name">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'first_name') && careerForm.controls['first_name'].dirty">
+                                First Name is required</span>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="last_name">Last Name</label>
+                            <div class="form-content">
+                                <input type="text" name="last_name" placeholder="Kumar" formControlName="last_name">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'last_name') && careerForm.controls['last_name'].dirty">
+                                Last Name is required</span>
+                        </div>
+                        <br>
+
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <div class="form-content">
+                                <input type="phone" name="phone" minlength="10" maxlength="10"
+                                    placeholder="+91 XXXXXXXXXX" formControlName="phone">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'phone') && careerForm.controls['phone'].dirty">
+                                Phone Number is required</span>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="email">Email</label>
+                            <div class="form-content">
+                                <input type="email" name="email" placeholder="rahul.kumar@gmail.com" formControlName="email">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'email') && careerForm.controls['email'].dirty">
+                                Email is required</span>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="address">Address</label>
+                            <div class="form-content">
+                                <input type="text" name="address" placeholder="Address" formControlName="address">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'address') && careerForm.controls['address'].dirty">
+                                Address is required</span>
+                        </div>
+
+                        <br>
+                        <div>
+                            <label for="course_value">Highest qualification</label>
+                            <div class="form-content">
+                                <label for="course_value"></label>
+                                <select name="course_value" id="" formControlName="course_value">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="BCom">B.Com</option>
+                                    <option value="MBA">MBA</option>
+                                    <option value="MSc">M.Sc</option>
+                                    <option value="MCA">MCA</option>
+                                </select>
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'course_value') && careerForm.controls['course_value'].dirty">
+                                Highest Qualifications is required</span>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="experience">Years of Experience</label>
+                            <div class="form-content">
+                                <input type="text" name="experience" placeholder="5"
+                                    formControlName="experience">
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'experience') && careerForm.controls['experience'].dirty">
+                                Experience is required</span>
+                        </div>
+
+                        <br>
+                        <div class="">
+                            <label for="file">Resume</label>
+                            <div class="form-content upload-container">
+                                <input id="file" type="file" (change)="onFileChange($event)" class="file-input"
+                                    name="file" />
+                            </div>
+                            <span class="form-error"
+                                *ngIf="careerForm.hasError('required', 'file') && careerForm.controls['file'].dirty">
+                                File is required</span>
+                        </div>
+                        <br>
+                        <div class="sendButton">
+                            <button class="submit button mt-4">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

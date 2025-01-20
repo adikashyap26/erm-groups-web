@@ -1,0 +1,28 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2>Corporate Social<br> Reponsibility</h2>
+        </div>
+    </div>
+    <div class="carousel-container">
+        <ngx-slick-carousel class="carousel" [config]="slideConfig">
+            <div ngxSlickItem *ngFor="let item of responsibility" class="slide">
+                <div class="content">
+                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                    <div class="overlay">
+                        <div>
+                            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnilTwo}}" alt="">
+                        </div>
+                        <div>
+                            <h3>{{item.title}}</h3>
+                        </div>
+                        <div>
+                            <p>{{item.button}} &nbsp;&rarr;</p>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="accomplishment-container py-4">
+    <div class="container">
+        <div class="row">
+            <h2>A Glimpse of Our <br> Accomplishments</h2>
+            <ngx-slick-carousel class="carousel mt-3" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let item of accomplishment" class="accomplishment">
+                    <div class="awards py-5 px-4">
+                        <h1>{{item.award_name}}</h1>
+                        <h4>{{item.award_year}}</h4>
+                        <div class="pt-4">
+                            <p class="d-flex text">
+                                <span><img class="img-fluid me-3 pe-3" src="images/home/Vector (4).png" alt="apostrope"></span>
+                                {{item.description}}
+                            </p>
+                            <img class="img-fluid union-img" src="images/home/Union.png" alt="union">
+                        </div>
+                    </div>
+                    <div>
+                        <img class="img-fluid main-img" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="award-given">
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+</div>

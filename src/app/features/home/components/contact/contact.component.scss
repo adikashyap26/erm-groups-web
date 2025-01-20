@@ -1,0 +1,71 @@
+.consultancy-container {
+    background-color: #184597;
+}
+
+h3 {
+    width: 70%;
+    margin-bottom: 6%;
+}
+
+.content {
+    padding-left: 5%;
+    background-image: url('/images/illustrations/Illustration4.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    // back
+}
+
+button {
+    background: none;
+    border: 1px solid var(--erm--neutral-font-color1);
+    color: var(--erm--neutral-font-color1);
+    border-radius: 8px;
+    padding: 8px 20px;
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.consultancy-img {
+    border-radius: 16px 0 0 16px;
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* Image is below the marquee stripe */
+}
+
+.maquee-container {
+    position: absolute;
+    width: 150%;
+    height: 50px;
+    top: 59%;
+    left: -10%;
+    transform: rotate(-32deg);
+    background-color: var(--erm-secondary-color);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    animation: diagonal-marquee 20s linear infinite;
+    white-space: nowrap;
+    color: var(--erm--neutral-font-color1);
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+@keyframes diagonal-marquee {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}

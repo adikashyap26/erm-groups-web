@@ -1,0 +1,15 @@
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    position: absolute;
+    color: var(--erm--neutral-font-color1);
+}
+h1{
+    font-family: 'condensed' !important;
+    font-size: 56px;
+}

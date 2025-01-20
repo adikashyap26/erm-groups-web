@@ -1,0 +1,31 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-xl-8 col-sm-12 col-md-9 m-auto">
+                <p class="text-center">In the Indian and international steel and mining industries, we are a prominent
+                    corporation. We are still acknowledged for our social and environmental responsibility in addition
+                    to our operational competence.</p>
+            </div>
+        </div>
+        <div class="row select-container pt-4">
+            <select name="year" id="year" (change)="onSelectYear($event)">
+              <option value="" disabled selected>Year</option>
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+            </select>
+          </div>
+        <div class="row py-4">
+            <div class="reports-container">
+                <div class="content" *ngFor="let item of reportsData">
+                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="reports-image">
+                    <div class="my-2">
+                        <h5>{{item.report_name}}</h5>
+                        <p class="sub mb-2">{{item.year}}</p>
+                        <div class="download">
+                            <span (click)="onClickDownload(item._id)">Download &DownArrowBar;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

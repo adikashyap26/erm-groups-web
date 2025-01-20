@@ -1,0 +1,33 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+h1{
+    font-family: 'condensed' !important;
+}
+.accomplishment{
+    display: flex;
+    background-color: var(--erm-secondary-color-shade1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+.awards{
+    color: var(--erm--neutral-font-color1);
+    width: 45%;
+}
+
+.accomplishment-container ::ng-deep .slick-dots{
+    text-align: left;
+    margin-left: 18%;
+    bottom: 10px;
+}
+
+.union-img{
+    position: relative;
+}
+.text{
+    position: absolute;
+    width: 300px;
+    top: 35%;
+}

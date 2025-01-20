@@ -1,0 +1,10 @@
+<div class="video-container">
+    <iframe height="480" *ngIf="sanitizedVideoUrl" [src]="sanitizedVideoUrl" title="YouTube video player"
+        frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Optional fallback message if no video_url is available -->
+<ng-container *ngIf="!data?.video_url">
+    <p>Video not available.</p>
+</ng-container>

@@ -1,0 +1,11 @@
+<div class="main-container">
+  <div class="container py-5 mt-3" *ngIf="galleryData" #galleryContainer>
+    <div class="row">
+      <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4 my-2" *ngFor="let img of galleryData.data; let i = index">
+        <a [attr.data-src]="'https://erm-backend-deploy-production.up.railway.app/' + img.thumbnail" class="gallery-item">
+          <img class="img-fluid" [src]="'https://erm-backend-deploy-production.up.railway.app/' + img.thumbnail" alt="Image {{ i + 1 }}">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

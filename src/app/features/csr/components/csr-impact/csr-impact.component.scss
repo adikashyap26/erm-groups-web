@@ -1,0 +1,26 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+p{
+    color: var(--erm-accent-font-color); 
+}
+.main-container{
+    background-color: var(--erm--neutral-font-color1);
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h4{
+    color: var(--erm-secondary-color-shade3);
+    font-weight: 600;
+}
+.img-container{
+    background-color: rgba(141, 153, 174, 0.35);
+    border-radius: 50%;
+    padding: 10px;
+}

@@ -1,0 +1,30 @@
+<div class="illustration-container pb-5" *ngIf="miningListData" [ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/{{miningData[0]?.thumbnail}})'}">
+    <div class="main-container pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div *ngIf="miningData">
+                    <h2>{{miningData[0]?.heading}}</h2>
+                </div>
+                <div class="mining-container pt-2">
+                    <div class="content" *ngFor="let item of miningListData">
+                        <div class="img-container">
+                            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                        </div>
+                        <div class="mining-content">
+                            <div>
+                                <h6>{{item.title}}</h6>
+                                <h4>{{item.sub_title}}</h4>
+                                <div class="desc pb-2">
+                                    <p>{{item.description}}</p>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <span (click)="onClickViewMine(item.url)">{{item.button_text}} &rarr;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

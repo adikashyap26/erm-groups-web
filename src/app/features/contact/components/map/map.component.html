@@ -1,0 +1,8 @@
+<div class="container py-4" *ngIf="sanitizedMapUrl">
+    <div class="row">
+        <h2>{{mapDetail[0]?.map_heading}}</h2>
+        <div class="map-container py-4">
+            <iframe [src]="sanitizedMapUrl" width="600" height="450" style="border:0;"></iframe>
+        </div>
+    </div>
+</div>

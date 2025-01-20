@@ -1,0 +1,30 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row" *ngIf="awardDescriptionData">
+            <div class="col-xl-8 col-lg-8 col-md-9 col-sm-12 m-auto text-center">
+                <p>{{awardDescriptionData[0].description}}</p>
+            </div>
+        </div>
+        <div class="row" *ngIf="awardCatgoryData">
+            <div class="tab-container">
+                <div class="tabs" *ngFor="let item of awardCatgoryData"
+                [ngClass]="{'active': selectedYear === item._id}"
+                 (click)="onClickAwardYear(item._id)">
+                    <span>{{item.year}}</span>
+                </div>
+            </div>
+            <div class="award-container">
+                <div class="row content align-items-center my-5" *ngFor="let item of filterAwardData">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 p-0">
+                        <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                    </div>
+                    <div class="col-lg-7 col-xl-7 col-md-7 col-sm-12 award-content">
+                        <h3>{{item.award_name}}</h3>
+                        <hr>
+                        <p>{{item.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.highlight-container{
+    display: flex;
+}
+.content{
+    flex: 30%;
+    margin: 10px 20px;
+}
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+p{
+    color: var(--erm-accent-font-color); 
+}

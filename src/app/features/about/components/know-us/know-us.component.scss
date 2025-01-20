@@ -1,0 +1,37 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+h6, h5{
+    color: var(--erm-secondary-color-shade3);
+}
+p{
+    color: var(--erm-accent-font-color); 
+}
+.know-container{
+    width: 95%;
+    margin-left: auto;
+}
+.carousel{
+    display: flex;
+    overflow-y: auto;
+}
+.content{
+    min-width: 340px;
+    border-radius: 18px;
+    margin: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--erm--neutral-font-color1);
+}
+.img-container{
+    text-align: right;
+}
+.knowus-img{
+    height: 160px;
+}
+::-webkit-scrollbar{
+    display: none;
+}

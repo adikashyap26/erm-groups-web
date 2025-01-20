@@ -1,0 +1,32 @@
+<div class="main-container pt-4 pb-3">
+    <div class="container"  *ngIf="knowusData">
+        <div class="row">
+            <h2>{{knowusData[0].title}}</h2>
+            <h6>{{knowusData[0].sub_title}}</h6>
+            <div *ngFor="let item of knowusData[0].lists">
+                <p>{{item.list_description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="know-container" *ngIf="knowusListData">
+        <div class="carousel">
+            <div class="content" *ngFor="let item of knowusListData">
+                <div class="pt-5 px-4">
+                    <h6>{{item.title}}</h6>
+                    <p>{{item.description}}</p>
+                </div>
+                <div class="img-container">
+                    <img class="knowus-img" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="knowus-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-5" *ngIf="knowusDescriptionData">
+        <div class="row">
+            <div *ngFor="let item of knowusDescriptionData[0].lists">
+                <p>{{item.list_description}}</p>
+            </div>
+            <h5 class="mt-2">{{knowusDescriptionData[0].sub_text}}</h5>
+        </div>
+    </div>
+</div>

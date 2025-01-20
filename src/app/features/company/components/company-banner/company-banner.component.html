@@ -1,0 +1,8 @@
+<div class="main-container" *ngIf="bannerData">
+    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{bannerData[0].thumbnail}}" alt="company-banner">
+    <div class="content text-center">
+        <h1>{{bannerData[0].banner_title}}</h1>
+    </div>
+</div>
+
+<!-- https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_banner.jpg -->

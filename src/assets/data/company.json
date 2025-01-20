@@ -1,0 +1,150 @@
+[
+    {
+        "url": "companies",
+        "heading": "Our Group of Companies",
+        "subheading": "With all of our companies innovation meets diversity. As a leading conglomerate, we bring together a dynamic portfolio of subsidiaries that operate across multiple industries. Our commitment to excellence, sustainability, and innovation drives us to deliver exceptional value to our customers, partners, and communities.",
+        "desc": "We believe in the power of collaboration. Our group of companies spans various sectors, each contributing unique expertise and capabilities. Together, we are greater than the sum of our parts, creating synergies that propel us toward shared success and a brighter future.",
+        "children": [
+            {
+                "url": "prakash-sponge-iron-and-power-pvt-ltd",
+                "title": "PRAKASH SPONGE IRON AND POWER PVT.LTD",
+                "desc": "Known as PSIP, located at Heggere & Kaparahalli villages in Challakere taluk of Chitradurga district, Karnataka, manufacturing DRI, high quality mild steel billets, TMT bars & Structural Steel.  The steel produced here are marketed in the brand name “TURBOSTEEL”.",
+                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company1.jpg",
+                "innerchild": [
+                    {
+                        "url": "prakash-sponge-iron-and-power-pvt-ltd",
+                        "title": "PRAKASH SPONGE IRON AND POWER PVT.LTD",
+                        "country": "India",
+                        "state": "Shivamogga District, Karnataka",
+                        "location": "Navile Basavapura Village",
+                        "area": "74 Acres",
+                        "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_erm.jpg",
+                        "description": [
+                            {
+                                "title": "TMT ROLLING MILL",
+                                "desc": "The ERMMPL plant is located at Navile Basavapura Village, Bhadravathi Taluk, Shivamogga District, Karnataka over an area of 74 Acres. The plant is located between Bhadravathi and Shivamooga at a distance of 12 Kms from Shivamogga.  In the first phase commissioned TMT Rolling Mill unit was to produce TMT Re-bars with a Production capacity of 1,10,000 Tons per Annum.  The TMT Re-bars produced here are marked under the brand “SREERAMA”.  The TMT Re-bars produced are of high quality and strength; physically and chemically are as per the BIS standards of fe500 grade.  SREERAMA Fe 500 bars are available in the following sizes: 8, 10, 12, 16, 20, 25 & 32 mm."
+                            },
+                            {
+                                "title": "SMS",
+                                "desc": "Part of second phase expansion at ERMMPL Plant, EC obtained to install Induction Furnace to produce MS Billets.  The construction of the Induction Furnace and CCM is progressing as scheduled.  On completion of the furnace, the hot billets will be used to produce TMT Re-bars."
+                            }
+                        ],
+                        "subheading": "SOLAR ENERGY",
+                        "text": "As part of the Green Energy initiative and environmental responsibility, ERM Group is going big on Solar Energy Investments.  In the first phase of the Solar Energy initiative at ERMMPL, a 1.4 Mw Solar Energy plant is being installed and will be commissioned shortly.  Subsequently, it will be expanded to produce 3.5 Mw of solar energy.",
+                        "image": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_erm2.jpg",
+                        "gallery": [
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery1.jpg"
+                            },
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery5.jpg"
+                            },
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery7.jpg"
+                            },
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery2.jpg"
+                            },
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery3.jpg"
+                            },
+                            {
+                                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_gallery8.jpg"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "url": "e-ramamurthy-minerals-and-metals-pvt-ltd",
+                "title": "E. RAMAMURTHY MINERALS & METALS PVT. LTD.",
+                "desc": "In the first phase TMT Re-bar rolling mill has been commissioned and erection of Induction Furnace is under progress.  TMT bars in the brand name of “SREERAMA”  are manufactured at this plant located at Navile Basavapura Village, Bhadravati Taluk, Shivamogga District, Karnataka.",
+                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company2.jpg",
+                "innerchild": [
+                    {
+                        "url": "e-ramamurthy-minerals-and-metals-pvt-ltd",
+                        "title": "E. RAMAMURTHY MINERALS & METALS PVT. LTD.",
+                        "country": "India",
+                        "state": "Shivamogga District, Karnataka",
+                        "location": "Navile Basavapura Village",
+                        "area": "74 Acres",
+                        "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company2.jpg",
+                        "description": [
+                            {
+                                "title": "TMT ROLLING MILL",
+                                "desc": "The ERMMPL plant is located at Navile Basavapura Village, Bhadravathi Taluk, Shivamogga District, Karnataka over an area of 74 Acres. The plant is located between Bhadravathi and Shivamooga at a distance of 12 Kms from Shivamogga.  In the first phase commissioned TMT Rolling Mill unit was to produce TMT Re-bars with a Production capacity of 1,10,000 Tons per Annum.  The TMT Re-bars produced here are marked under the brand “SREERAMA”.  The TMT Re-bars produced are of high quality and strength; physically and chemically are as per the BIS standards of fe500 grade.  SREERAMA Fe 500 bars are available in the following sizes: 8, 10, 12, 16, 20, 25 & 32 mm."
+                            },
+                            {
+                                "title": "SMS",
+                                "desc": "Part of second phase expansion at ERMMPL Plant, EC obtained to install Induction Furnace to produce MS Billets.  The construction of the Induction Furnace and CCM is progressing as scheduled.  On completion of the furnace, the hot billets will be used to produce TMT Re-bars."
+                            }
+                        ],
+                        "subheading": "SOLAR ENERGY",
+                        "text": "As part of the Green Energy initiative and environmental responsibility, ERM Group is going big on Solar Energy Investments.  In the first phase of the Solar Energy initiative at ERMMPL, a 1.4 Mw Solar Energy plant is being installed and will be commissioned shortly.  Subsequently, it will be expanded to produce 3.5 Mw of solar energy.",
+                        "image": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_erm2.jpg"
+                    }
+                ]
+            },
+            {
+                "url": "benaka-minerals-trading-pvt-ltd",
+                "title": "BENEKA MINERALS TRADING PVT.LTD",
+                "desc": "Benaka Minerals Trading Pvt. Ltd. benefits from the established business and financial strengths of ERM Group. Its strengths in Trading have been built up over the years not only by keeping abreast of the latest trends in the market but also by making that vital extra effort to stay ahead.",
+                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company1.jpg",
+                "innerchild": [
+                    {
+                        "url": "benaka-minerals-trading-pvt-ltd",
+                        "title": "BENEKA MINERALS TRADING PVT.LTD",
+                        "country": "India",
+                        "state": "Shivamogga District, Karnataka",
+                        "location": "Navile Basavapura Village",
+                        "area": "74 Acres",
+                        "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company1.jpg",
+                        "description": [
+                            {
+                                "title": "TMT ROLLING MILL",
+                                "desc": "The ERMMPL plant is located at Navile Basavapura Village, Bhadravathi Taluk, Shivamogga District, Karnataka over an area of 74 Acres. The plant is located between Bhadravathi and Shivamooga at a distance of 12 Kms from Shivamogga.  In the first phase commissioned TMT Rolling Mill unit was to produce TMT Re-bars with a Production capacity of 1,10,000 Tons per Annum.  The TMT Re-bars produced here are marked under the brand “SREERAMA”.  The TMT Re-bars produced are of high quality and strength; physically and chemically are as per the BIS standards of fe500 grade.  SREERAMA Fe 500 bars are available in the following sizes: 8, 10, 12, 16, 20, 25 & 32 mm."
+                            },
+                            {
+                                "title": "SMS",
+                                "desc": "Part of second phase expansion at ERMMPL Plant, EC obtained to install Induction Furnace to produce MS Billets.  The construction of the Induction Furnace and CCM is progressing as scheduled.  On completion of the furnace, the hot billets will be used to produce TMT Re-bars."
+                            }
+                        ],
+                        "subheading": "SOLAR ENERGY",
+                        "text": "As part of the Green Energy initiative and environmental responsibility, ERM Group is going big on Solar Energy Investments.  In the first phase of the Solar Energy initiative at ERMMPL, a 1.4 Mw Solar Energy plant is being installed and will be commissioned shortly.  Subsequently, it will be expanded to produce 3.5 Mw of solar energy.",
+                        "image": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_erm2.jpg"
+                    }
+                ]
+            },
+            {
+                "url": "codeland-infosolution-pvt-ltd",
+                "title": "CODELAND INFOSOLUTION PVT.LTD",
+                "desc": "Codeland Infosolutions Pvt. Ltd., established in the year 2011 by like-minded individuals with the passion and determination to transform their imagination into reality. Our imagination gave birth to revolutionary concepts, which have today been channelized into unique products aimed at consumers and enterprises.",
+                "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company3.jpg",
+                "innerchild": [
+                    {
+                        "url": "codeland-infosolution-pvt-ltd",
+                        "title": "CODELAND INFOSOLUTION PVT.LTD",
+                        "country": "India",
+                        "state": "Shivamogga District, Karnataka",
+                        "location": "Navile Basavapura Village",
+                        "area": "74 Acres",
+                        "img": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_company3.jpg",
+                        "description": [
+                            {
+                                "title": "TMT ROLLING MILL",
+                                "desc": "The ERMMPL plant is located at Navile Basavapura Village, Bhadravathi Taluk, Shivamogga District, Karnataka over an area of 74 Acres. The plant is located between Bhadravathi and Shivamooga at a distance of 12 Kms from Shivamogga.  In the first phase commissioned TMT Rolling Mill unit was to produce TMT Re-bars with a Production capacity of 1,10,000 Tons per Annum.  The TMT Re-bars produced here are marked under the brand “SREERAMA”.  The TMT Re-bars produced are of high quality and strength; physically and chemically are as per the BIS standards of fe500 grade.  SREERAMA Fe 500 bars are available in the following sizes: 8, 10, 12, 16, 20, 25 & 32 mm."
+                            },
+                            {
+                                "title": "SMS",
+                                "desc": "Part of second phase expansion at ERMMPL Plant, EC obtained to install Induction Furnace to produce MS Billets.  The construction of the Induction Furnace and CCM is progressing as scheduled.  On completion of the furnace, the hot billets will be used to produce TMT Re-bars."
+                            }
+                        ],
+                        "subheading": "SOLAR ENERGY",
+                        "text": "As part of the Green Energy initiative and environmental responsibility, ERM Group is going big on Solar Energy Investments.  In the first phase of the Solar Energy initiative at ERMMPL, a 1.4 Mw Solar Energy plant is being installed and will be commissioned shortly.  Subsequently, it will be expanded to produce 3.5 Mw of solar energy.",
+                        "image": "https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_inner_erm2.jpg"
+                    }
+                ]
+            }
+        ]
+    }
+]

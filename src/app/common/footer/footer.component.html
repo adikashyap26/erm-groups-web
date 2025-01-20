@@ -1,0 +1,62 @@
+<footer class="py-4">
+    <div class="container" *ngFor="let item of data">
+        <div class="row">
+            <div class="col-lg-5 col-xl-5 col-md-4 col-sm-12">
+                <p class="mb-0">{{item.tag_line}}</p>
+
+                <div class="social-media-container py-3">
+                    <h4 class="mb-3">Social Info</h4>
+                    <div class="d-flex social_info">
+                        <div *ngFor="let value of item.social_info" >
+                            <img class="img-fluid me-2" src="{{value.imageUrl}}" alt="error">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12 pb-3">
+                <h4 class="mb-4">Quick Links</h4>
+                <a *ngFor="let ss of item.quick_link">
+                    <p class="mb-2" (click)="onClicklinks(ss.url)">{{ss.title}}</p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-xl-3 col-md-4 col-sm-12 company">
+                <h4 class="mb-4">Our Companies</h4>
+                <div *ngFor="let comp of item.our_companies">
+                    <p class="mb-2" (click)="onClickCompany(comp.url)">{{comp.title}}</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-lg-5 col-xl-5 col-md-4 col-sm-12">
+                <h4 class="mb-3">Contact Info</h4>
+                <div class="d-flex align-items-start">
+                    <img class="img-fluid pe-2" src="images/icons/location.svg" alt="location">
+                    <p class="mb-0">{{item.address}}</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-md-4 col-sm-12 mt-5">
+                <div class="contact-container" *ngFor="let call of item.phone_and_email">
+                    <div class="d-flex align-items-center py-1">
+                        <img class="img-fluid me-2" src="images/icons/phone.svg" alt="mobile">
+                        <p class="mb-0">{{call.title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="hitachi-img">
+            </div>
+        </div>
+    </div>
+    <hr class="horizontal">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-between">
+                <p class="mb-0">Designed & Developed by Hexiradigital</p>
+                <p class="mb-0">&#64;2024copyrightermgroup</p>
+            </div>
+        </div>
+    </div>
+</footer>

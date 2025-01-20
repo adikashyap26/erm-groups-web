@@ -1,0 +1,28 @@
+<div class="main-container py-4" *ngIf="filterTitle">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">{{ filterTitle.title }}</h1>
+            <div class="breadcrumbs py-4">
+                <ul class="p-0">
+                    <li><a class="px-2" routerLink="/home">Home</a>/</li>
+                    <li><a class="px-2" routerLink="/csr">CSR</a>/</li>
+                    <li class="company px-2">{{ filterTitle.title }}</li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container text-white position-relative" *ngIf="filterBanner">
+    <div class="overlay"></div>
+    <img class="img-fluid w-100" src="https://erm-backend-deploy-production.up.railway.app/{{filterBanner.thumbnail}}" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6 col-sm-12 col-md-8 text-content position-absolute">
+                <h2>{{filterBanner.banner_title}}</h2>
+                <p class="pt-4">{{filterBanner.banner_description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="main-container" *ngIf="miningListData">
+    <div class="container">
+        <div class="row" *ngIf="urlId">
+            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnail}}" alt="">
+        </div>
+        <div class="row pt-5" *ngIf="miningListData">
+            <div class="col-xl-3 col-lg-3">
+                <div class="mining mb-4" >
+                    <h4>Mines</h4>
+                    <hr>
+                    <div *ngFor="let item of miningListData; let i=index"
+                        [class.active]="item.miningUrlId === activeUrl">
+                        <h6 (click)="onClickMine(item.miningUrlId)">{{item.page_title | uppercase}} </h6>
+                        <hr *ngIf="i < miningListData.length - 1">
+                    </div>
+                </div>
+                <div class="reports mb-4" *ngIf="reportsData">
+                    <h4>Reports</h4>
+                    <hr>
+                    <div *ngFor="let item of reportsData; let i=index;">
+                        <h6 (click)="onClickReport(item._id)">{{item.report_name}} </h6>
+                        <p>{{item.year}}</p>
+                        <hr>
+                    </div>
+                    <div class="text-center">
+                        <h6>View More Reports</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-xl-9" *ngIf="urlId">
+                <div class="mb-4">
+                    <h3>{{urlId[0]?.section_title}}</h3>
+                    <p class="py-2">{{urlId[0]?.section_description_one}}</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="pb-2">{{urlId[0]?.sub_title}}</h3>
+                    <div *ngFor="let item of urlId[0]?.lists">
+                        <p class="d-flex align-items-start"> <img class="img-fluid mt-2 me-2" src="images/icons/red.svg"
+                                alt="">{{item.list_title}}</p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnilTwo}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

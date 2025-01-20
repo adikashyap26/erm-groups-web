@@ -1,0 +1,63 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$web-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($web-theme);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto' !important;
+}
+@import 'lightgallery/css/lightgallery.css';
+@import 'lightgallery/css/lg-thumbnail.css';
+
+@font-face {
+    font-family: 'roboto';
+    src: url(assets/font/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'condensed';
+    src: url(assets/font/RobotoCondensed-Medium.ttf);
+}
+
+:root{
+    --erm-primary-color: #184597;
+    --erm-primary-color-shade1: #404574;
+    --erm-secondary-color: #ED3237;
+    --erm-secondary-color-shade1: #D90429;
+    --erm-secondary-color-shade2: rgba(203, 21, 21, 1);
+    --erm-secondary-color-shade3: #EF233C;
+    --erm-tertiary-color: #404574;
+    --erm-accent-font-color: #666666;
+    --erm--neutral-font-color1: #ffffff;
+    --erm--neutral-font-color2: #000000;
+    --erm-small-font-size: 15px;
+    --erm-normal-font-size: 16px;
+    --erm-standard-font-size: 17px;
+    --erm-large-font-size: 32px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

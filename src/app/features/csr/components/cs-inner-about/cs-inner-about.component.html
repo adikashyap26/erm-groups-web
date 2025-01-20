@@ -1,0 +1,13 @@
+<div class="main-container py-5" *ngIf="filtercsrAbout">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-xl-7 col-sm-12 col-md-6">
+                <h2 class="mb-4">{{filtercsrAbout.title}}</h2>
+                <p>{{filtercsrAbout.description}}</p>
+            </div>
+            <div class="col-lg-5 col-xl-5 col-md-6 col-sm-12">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{filtercsrAbout.thumbnail}}" alt="about-img">
+            </div>
+        </div>
+    </div>
+</div>

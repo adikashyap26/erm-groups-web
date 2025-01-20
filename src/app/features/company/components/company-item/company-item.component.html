@@ -1,0 +1,28 @@
+<div class="component-wrapper">
+    <app-company-item-banner [urlId]="data"></app-company-item-banner>
+    <div class="main-container py-4" *ngIf="data">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div *ngFor="let vv of data.location_list">
+                        <h6>{{vv.title}}</h6>
+                        <p class="sub"><strong>{{vv.description}}</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{data.thumbnail}}" alt="">
+            </div>
+            <div class="row">
+                <h2 class="my-5"><strong>{{data.page_title}}</strong></h2>
+                <div class="pb-2" *ngFor="let item of data.section_lists">
+                    <div class="col-12">
+                        <h4><strong>{{item.list_title}}</strong></h4>
+                        <p>{{item.list_description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-gallery *ngIf="data" [galleryId]="data"></app-gallery>
+</div>

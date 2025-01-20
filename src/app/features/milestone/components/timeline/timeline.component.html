@@ -1,0 +1,39 @@
+<div class="main-container pt-4 pb-5">
+    <div class="container">
+        <div class="row">
+            <h2>Our Timeline</h2>
+            <div class="carousel-container mt-4">
+                <div class="slick-prev1" (click)="goToPrevSlide()">
+                    <span><img src="images/icons/left.svg" alt="left-arrow"></span>
+                </div>
+                <div class="slick-next1" (click)="goToNextSlide()">
+                    <span><img src="images/icons/right.svg" alt="right-arrow"></span>
+                </div>
+                <hr>
+                <ngx-slick-carousel class="slider-nav" #slickModal="slick-carousel" [config]="sliderNavConfig">
+                    <div ngxSlickItem *ngFor="let item of timelineCategoryData" class="slider-nav-item">
+                        <span class="year-dot">
+                            <img class="img-fluid" src="images/icons/Group 174.svg" alt="">
+                        </span>
+                        <h6 class="mb-4">{{ item.year }}</h6>
+                    </div>
+                </ngx-slick-carousel>
+
+                <ngx-slick-carousel class="slider-for mt-5" [config]="sliderForConfig">
+                    <div ngxSlickItem *ngFor="let item of timelineData" class="slider-item">
+                        <div class="row">
+                            <div class="desc col-xl-7 col-lg-7 col-sm-12 col-md-7">
+                                <h3>{{ item.number }}</h3>
+                                <p>{{ item.description }}</p>
+                            </div>
+                           <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5">
+                            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="Timeline Image" />
+                           </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row" *ngIf="descriptionData">
+            <h2>{{descriptionData[0].title}}</h2>
+            <p>{{descriptionData[0].description}}</p>
+        </div>
+        <div class="row pt-4" *ngIf="membersData">
+            <div class="members">
+                <div class="content" *ngFor="let item of membersData" (click)="onClickMember(item._id)">
+                    <div class="img-container pt-4">
+                        <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="team-member-img">
+                    </div>
+                    <h4 class="text-center pt-3">{{item.name}}</h4>
+                    <p class="text-center">{{item.position}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="selectedMember" class="modal-backdrop">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="close-button d-flex justify-content-end">
+            <img (click)="closePopup()" class="img-fluid" src="images/icons/cancel.svg"  alt="close-button">
+        </div>
+        <div class="data-content">
+            <div class="img-container">
+                <img [src]="'https://erm-backend-deploy-production.up.railway.app/' + selectedMember.thumbnail" alt="team-member-img"
+                    class="team-member-img" />
+            </div>
+            <div class="member-data">
+                <h3 class="pt-3">{{ selectedMember.name }}</h3>
+                <h5>{{ selectedMember.position }}</h5>
+                <p>{{selectedMember.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="main-container py-5" *ngIf="csrworkData">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5 text-white">
+                <h2 class="mb-5">{{csrworkData[0].title}}</h2>
+                <div class="workcategory" *ngFor="let item of workCategoryData; let idx=index;">
+                    <p (click)="onClickCategory(item._id, idx)" [class.active]="idx === selectedCategoryIndex">
+                        {{item.title | titlecase}}</p>
+                </div>
+                <p class="mt-5">{{csrworkData[0].description}}</p>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                <div class="accordion">
+                    <div class="accordion-item" *ngFor="let section of filterCategoryData; let i = index;"
+                        [ngClass]="{'active': section.isOpen, 'inactive': !section.isOpen}">
+                        <h3 class="accordion-header d-flex justify-content-between" (click)="toggleSection(i)">
+                            {{ section.name }}
+                            <span class="chevron" [ngClass]="{'rotate': section.isOpen}">&#x25BC;</span>
+                        </h3>
+                        <div class="accordion-content pb-4" [style.display]="section.isOpen ? 'block' : 'none'">
+                            <p>{{ section.description }}</p>
+                            <div>
+                                <span (click)="onClickCsrcatgory(section.csr_url)">{{section.button_text}} &rarr;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

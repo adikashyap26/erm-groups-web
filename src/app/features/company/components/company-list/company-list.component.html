@@ -1,0 +1,20 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row mb-5" *ngIf="companyListData">
+            <h2>{{companyListData[0].title}}</h2>
+            <p>{{companyListData[0].description_one}}</p>
+            <p>{{companyListData[0].description_two}}</p>
+        </div>
+        <div class="row" *ngFor="let item of companyCategoryData; let i=index;">
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-5">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="company-img">
+            </div>
+            <div class="col-lg-8 col-xl-8 col-sm-12 col-md-7">
+                <h3>{{item.title}}</h3>
+                <p class="py-3">{{item.description}}</p>
+                <a (click)="onClickCompany(item.url)">{{item.button_text}} &rarr;</a>
+            </div>
+            <hr *ngIf="i < companyCategoryData.length - 1">
+        </div>
+    </div>
+</div>

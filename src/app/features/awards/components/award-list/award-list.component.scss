@@ -1,0 +1,37 @@
+p {
+    color: var(--erm-accent-font-color);
+}
+
+.tab-container {
+    display: flex;
+}
+
+.tabs {
+    cursor: pointer;
+    border: 1px solid var(--erm-secondary-color-shade3);
+    border-radius: 12px;
+    padding: 12px 30px;
+    margin: 0 10px;
+}
+
+.tabs.active {
+    background-color: var(--erm-secondary-color-shade3);
+    color: white;
+}
+h3{
+    color: var(--erm-secondary-color-shade3);
+}
+hr{
+    opacity: 1;
+    border: 1.2px solid black;
+}
+.content{
+    border: 2px solid #8D99AE;
+    border-radius: 18px;
+}
+img{
+    border-radius: 18px 0 0 18px;
+}
+.award-content{
+    padding: 2% 5%;
+}

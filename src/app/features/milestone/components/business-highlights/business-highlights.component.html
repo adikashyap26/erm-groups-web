@@ -1,0 +1,14 @@
+<div class="main-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2>{{businessData[0].title}}</h2>
+            <p>{{businessData[0].description}}</p>
+            <div class="highlight-container mt-2" *ngIf="historyData">
+                <div class="content" *ngFor="let item of historyData">
+                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="highlights-img">
+                    <p class="pt-4">{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

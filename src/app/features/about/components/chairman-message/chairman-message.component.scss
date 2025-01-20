@@ -1,0 +1,33 @@
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+img.chairman-img {
+    height: 400px;
+}
+
+.bg-message {
+    // background-image: url('/images/illustrations/Mask group.svg');
+    // background-repeat: no-repeat;
+    // background-position: bottom right;
+    // background-size: contain;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+img.message-img2 {
+    height: 180px;
+}
+
+.bg-message2 {
+    border-radius: 18px;
+    background-color: var(--erm-primary-color);
+}
+.message-content{
+    background-color: rgba(141, 153, 174, 0.22);
+    margin-left: 2%;
+    border-radius: 16px;
+}

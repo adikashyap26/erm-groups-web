@@ -1,0 +1,23 @@
+h1{
+    font-family: 'condensed' !important;
+    color: var(--erm-secondary-color);
+    font-size: 48px;
+    font-weight: 600;
+}
+ul{
+    list-style: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--erm--neutral-font-color2);
+}
+.company{
+    color: var(--erm-secondary-color);
+}
+hr{
+    opacity: 1;
+    margin: 10px 0;
+}

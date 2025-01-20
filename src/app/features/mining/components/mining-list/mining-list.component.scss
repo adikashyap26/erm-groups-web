@@ -1,0 +1,65 @@
+.illustration-container{
+    // background-image: url('/images/illustrations/mining-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: bottom right;
+}
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+p{
+    color: var(--erm-accent-font-color); 
+}
+span{
+    color: var(--erm-secondary-color);
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+}
+.mining-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+    width: 48%;
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    margin: 16px 10px;
+    background-color: var(--erm--neutral-font-color1);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+}
+.desc{
+    border-left: 2px solid var(--erm-secondary-color-shade3);
+    p{
+        padding-left: 10px;
+    }
+}
+h6{
+    color: var(--erm-secondary-color-shade3);
+}
+h4{
+    font-size: 21px;
+    color: var(--erm-primary-color-shade1);
+}
+.mining-content{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+img{
+    border-radius: 16px;
+    height: 100%;
+    width: 100%;
+}
+.img-container{
+    height: 100%;
+    width: 100%;
+}

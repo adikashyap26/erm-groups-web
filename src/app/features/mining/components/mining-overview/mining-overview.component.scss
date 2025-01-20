@@ -1,0 +1,25 @@
+.mining, .reports{
+    border: 2px solid #8D99AE;
+    border-radius: 20px;
+    padding: 14px 12px;
+    background-color: var(--erm--neutral-font-color1);
+    h4{
+        color: #404574;
+        font-family: 'condensed' !important;
+    }
+    h6{
+        color: #404574; 
+        cursor: pointer;
+        font-weight: 500;
+    }
+}
+.active h6{
+    color: red !important;
+}
+p{
+    color: var(--erm-accent-font-color); 
+}
+h3{
+    font-family: 'condensed' !important;
+    color: #404574; 
+}
