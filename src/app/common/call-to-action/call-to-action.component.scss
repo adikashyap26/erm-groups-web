@@ -36,6 +36,9 @@ h4{
 input{
     background: none;
     border: none;
+    width: 100%;
+    outline: none;
+    color: white;
 }
 input::placeholder{
     color: #8D99AE;
