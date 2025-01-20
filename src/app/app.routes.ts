@@ -10,10 +10,10 @@ export const routes: Routes = [
         path: 'aboutus',
         loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule)
     },
-    {
-        path: 'team',
-        loadChildren: () => import('./features/team/team.module').then(m => m.TeamModule)
-    },
+    // {
+    //     path: 'team',
+    //     loadChildren: () => import('./features/team/team.module').then(m => m.TeamModule)
+    // },
     {
         path: 'history-milestone',
         loadChildren: () => import('./features/milestone/milestone.module').then(m => m.MilestoneModule)

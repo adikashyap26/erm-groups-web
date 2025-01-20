@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
 import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-mining-banner',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterModule],
   templateUrl: './mining-banner.component.html',
   styleUrl: './mining-banner.component.scss'
 })

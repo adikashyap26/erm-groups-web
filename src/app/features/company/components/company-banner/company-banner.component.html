@@ -1,8 +1,15 @@
 <div class="main-container" *ngIf="bannerData">
-    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{bannerData[0].thumbnail}}" alt="company-banner">
-    <div class="content text-center">
-        <h1>{{bannerData[0].banner_title}}</h1>
+    <div class="img-container">
+        <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{bannerData[0].thumbnail}}"
+            alt="company-banner">
+        <div class="content text-center">
+            <h1>{{bannerData[0].banner_title}}</h1>
+        </div>
+    </div>
+    <div class="breadcrumbs">
+        <ul class="p-0">
+            <li><a class="px-2" routerLink="/home">Home</a>/</li>
+            <li class="company px-2">{{ bannerData[0].banner_title}}</li>
+        </ul>
     </div>
 </div>
-
-<!-- https://erm-groups.s3.eu-north-1.amazonaws.com/images/companies_page_banner.jpg -->

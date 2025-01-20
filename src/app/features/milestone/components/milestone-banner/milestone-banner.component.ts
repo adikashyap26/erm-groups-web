@@ -1,11 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-milestone-banner',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterModule],
   templateUrl: './milestone-banner.component.html',
   styleUrl: './milestone-banner.component.scss'
 })

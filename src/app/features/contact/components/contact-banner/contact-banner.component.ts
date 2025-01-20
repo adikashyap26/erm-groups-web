@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
 import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact-banner',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterModule],
   templateUrl: './contact-banner.component.html',
   styleUrl: './contact-banner.component.scss'
 })

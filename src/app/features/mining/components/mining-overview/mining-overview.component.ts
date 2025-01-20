@@ -12,7 +12,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 })
 export class MiningOverviewComponent {
   @Input() urlId: any;
-  miningInnerUrl = '/api/mining/miningPage';
+  miningInnerUrl = '/api/mining/miningCategory';
   miningListData: any;
   reportsUrl = '/api/mining/miningReports';
   reportsData: any;
@@ -39,6 +39,7 @@ export class MiningOverviewComponent {
   onLoadMininglist() {
     this.http.get(this.miningInnerUrl).subscribe(response => {
       this.miningListData = response;
+      console.log(this.miningListData)
     })
   }
 

@@ -9,8 +9,8 @@
                     <h4>Mines</h4>
                     <hr>
                     <div *ngFor="let item of miningListData; let i=index"
-                        [class.active]="item.miningUrlId === activeUrl">
-                        <h6 (click)="onClickMine(item.miningUrlId)">{{item.page_title | uppercase}} </h6>
+                        [class.active]="item.url === activeUrl">
+                        <h6 (click)="onClickMine(item.url)">{{item.sub_title | uppercase}} </h6>
                         <hr *ngIf="i < miningListData.length - 1">
                     </div>
                 </div>
