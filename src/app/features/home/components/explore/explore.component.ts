@@ -21,7 +21,6 @@ dataUrl = '/api/home/exploreOurPremiumBrand'
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe(response => {
       this.data = response;
-      console.log(this.data)
     })
   }
 

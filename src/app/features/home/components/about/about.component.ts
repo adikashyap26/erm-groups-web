@@ -1,14 +1,14 @@
 import { NgFor, CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { Component } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
 import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -21,7 +21,6 @@ export class AboutComponent {
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe(response => {
       this.data = response;
-      console.log(this.data)
     })
   }
 }

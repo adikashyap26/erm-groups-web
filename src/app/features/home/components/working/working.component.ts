@@ -24,7 +24,6 @@ export class WorkingComponent {
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe(response => {
       this.working = response;
-      console.log(this.working)
     })
   }
 

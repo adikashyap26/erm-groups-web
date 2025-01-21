@@ -7,8 +7,10 @@
                 <div class="social-media-container py-3">
                     <h4 class="mb-3">Social Info</h4>
                     <div class="d-flex social_info">
-                        <div *ngFor="let value of item.social_info" >
-                            <img class="img-fluid me-2" src="{{value.imageUrl}}" alt="error">
+                        <div *ngFor="let value of item.social_info">
+                            <a href="value.url">
+                                <img class="img-fluid me-2" src="{{value.imageUrl}}" alt="error">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -26,7 +28,6 @@
                 <div *ngFor="let comp of item.our_companies">
                     <p class="mb-2" (click)="onClickCompany(comp.url)">{{comp.title}}</p>
                 </div>
-                
             </div>
         </div>
         <div class="row py-3">
@@ -38,23 +39,32 @@
                 </div>
             </div>
             <div class="col-lg-3 col-xl-3 col-md-4 col-sm-12 mt-5">
-                <div class="contact-container" *ngFor="let call of item.phone_and_email">
-                    <div class="d-flex align-items-center py-1">
+                <div class="contact-container">
+                    <a class="d-flex align-items-center py-1" href="tel: {{footerData[0].url}}">
                         <img class="img-fluid me-2" src="images/icons/phone.svg" alt="mobile">
-                        <p class="mb-0">{{call.title}}</p>
-                    </div>
+                        <p class="mb-0">{{footerData[0].title}}</p>
+                    </a>
+                    <a class="d-flex align-items-center py-1" href="tel: {{footerData[1].url}}">
+                        <img class="img-fluid me-2" src="images/icons/phone.svg" alt="mobile">
+                        <p class="mb-0">{{footerData[1].title}}</p>
+                    </a>
+                    <a class="d-flex align-items-center py-1" href="mailto: {{footerData[2].url}}">
+                        <img class="img-fluid me-2" src="images/icons/mail.svg" alt="mobile">
+                        <p class="mb-0">{{footerData[2].title}}</p>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12">
-                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="hitachi-img">
+                <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}"
+                    alt="hitachi-img">
             </div>
         </div>
     </div>
     <hr class="horizontal">
     <div class="container">
         <div class="row">
-            <div class="d-flex justify-content-between">
-                <p class="mb-0">Designed & Developed by Hexiradigital</p>
+            <div class="d-flex justify-content-between flex-wrap">
+                <p class="mb-0"><a target="_blank" href="https://hexiradigital.com/">Designed & Developed by Hexiradigital</a> </p>
                 <p class="mb-0">&#64;2024copyrightermgroup</p>
             </div>
         </div>

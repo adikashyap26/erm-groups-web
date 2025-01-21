@@ -2,7 +2,7 @@
     <div class="row" *ngFor="let item of data">
         <div class="col-lg-8 col-xl-8 col-sm-12 col-md-7 text-white content pt-5">
             <h3><strong>{{item.title}}</strong></h3>
-            <button class="mt-5" (click)="onClickButton(item.link)">{{item.button}}</button>
+            <button class="mt-5" (click)="onClickContact()">{{item.button}}</button>
             <br>
             <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnilTwo}}" alt="">
         </div>

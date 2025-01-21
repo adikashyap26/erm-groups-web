@@ -12,12 +12,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-xl-5 col-md-6">
+            <div class="col-lg-5 col-xl-5 col-md-6" *ngIf="ethicsData[0].thumbnail">
                 <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{ethicsData[0].thumbnail}}" alt="">
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-lg-5 col-xl-5 col-md-6">
+            <div class="col-lg-5 col-xl-5 col-md-6" *ngIf="ethicsData[1].thumbnail">
                 <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{ethicsData[1].thumbnail}}" alt="">
             </div>
             <div class="col-lg-7 col-xl-7 col-md-6">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-xl-5 col-md-6">
+            <div class="col-lg-5 col-xl-5 col-md-6" *ngIf="ethicsData[2].thumbnail">
                 <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{ethicsData[2].thumbnail}}" alt="">
             </div>
         </div>

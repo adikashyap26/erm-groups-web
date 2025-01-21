@@ -21,7 +21,6 @@ export class SocialResponsibilityComponent {
     ngOnInit() {
       this.http.get(this.dataUrl).subscribe(response => {
         this.responsibility = response;
-        console.log(this.responsibility)
       })
     }
 

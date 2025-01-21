@@ -15,12 +15,15 @@ import { Router } from '@angular/router';
 export class FooterComponent {
   dataUrl = '/api/home/footer'
   data: any;
+  footerData: any;
 
   constructor(private http: HttpService, private router: Router) { }
 
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe(response => {
       this.data = response;
+      this.footerData = this.data[0].phone_and_email;
+      console.log(this.footerData)
     })
   }
 

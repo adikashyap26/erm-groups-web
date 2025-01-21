@@ -18,7 +18,10 @@
                     <h4>Reports</h4>
                     <hr>
                     <div *ngFor="let item of reportsData; let i=index;">
-                        <h6 (click)="onClickReport(item._id)">{{item.report_name}} </h6>
+                        <div class="d-flex align-item-end">
+                            <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
+                            <span class="mt-2">&DownArrowBar;</span>
+                        </div>
                         <p>{{item.year}}</p>
                         <hr>
                     </div>

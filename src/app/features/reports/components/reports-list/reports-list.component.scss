@@ -45,3 +45,16 @@ p.sub{
     cursor: pointer;
     color: var(--erm-secondary-color-shade3);
 }
+@media(max-width: 600px){
+    .content{
+        width: 100%;
+    }
+    .select-container{
+        justify-content: center;
+    }
+}
+@media(min-width: 601px) and (max-width: 1023px){
+    .content{
+        width: 45%;
+    }
+}

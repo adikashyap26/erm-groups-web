@@ -39,3 +39,14 @@ h1 {
         color: var(--erm-secondary-color-shade3);
     }
 }
+img{
+    width: 100%;
+}
+@media (max-width: 767px){
+    h1{
+        font-size: 28px;
+    }
+    .breadcrumbs{
+        bottom: -15px;
+    }
+}
