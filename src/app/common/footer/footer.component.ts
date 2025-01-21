@@ -23,7 +23,6 @@ export class FooterComponent {
     this.http.get(this.dataUrl).subscribe(response => {
       this.data = response;
       this.footerData = this.data[0].phone_and_email;
-      console.log(this.footerData)
     })
   }
 

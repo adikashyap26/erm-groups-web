@@ -3,7 +3,10 @@ h2 {
 }
 
 .main-container {
-    background-color: var(--erm-primary-color);
+    background-image: url('/images/common/image1.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
 }
 
 .workcategory {
@@ -33,6 +36,7 @@ h2 {
 .accordion-item {
     border: none;
     overflow: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 
 .accordion-item.active {

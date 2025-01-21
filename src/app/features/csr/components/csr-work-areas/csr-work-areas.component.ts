@@ -30,6 +30,7 @@ export class CsrWorkAreasComponent {
   onLoadWorkArea() {
     this.http.get(this.csrworkUrl).subscribe(response => {
       this.csrworkData = response;
+      console.log(this.csrworkData)
     })
   }
 
@@ -45,12 +46,10 @@ export class CsrWorkAreasComponent {
   }
 
   onClickCategory(id: any, index: number) {
-    console.log(id);
     this.selectedCategoryIndex = index;
     this.http.get(this.categoryListUrl).subscribe(response => {
       this.categoryListData = response;
       this.filterCategoryData = this.categoryListData.filter((p: any) => p.ourWorkId === id);
-      console.log(this.filterCategoryData)
 
       if (this.filterCategoryData.length > 0) {
         this.filterCategoryData.forEach((item: any, i: number) => (item.isOpen = i === 0)); // Open the first item only

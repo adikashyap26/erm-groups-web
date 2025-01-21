@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <h2>Our Impact in Numbers</h2>
-            <div class="content col-xl-10 col-lg-10 col-md-10 col-sm-12 m-auto mt-3">
+            <div class="content col-xl-12 col-lg-12 col-md-12 col-sm-12 m-auto mt-3">
                 <div *ngFor="let item of impactData">
                     <div class="img-container">
                         <img class="img-fluid m-3" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="imapct-img">
                     </div>
-                    <h4>{{item.title}}</h4>
+                    <h4 class="mt-2">{{item.title}}</h4>
                     <p>{{item.number}}</p>
                 </div>
             </div>

@@ -58,4 +58,14 @@ h2 {
 
 .text-content p {
     font-size: 19px;
+    margin-top: 4%;
+}
+
+@media (max-width: 767px){
+    .text-content p{
+        font-size: 15px;
+    }
+    h2{
+        font-size: 20px;
+    }
 }

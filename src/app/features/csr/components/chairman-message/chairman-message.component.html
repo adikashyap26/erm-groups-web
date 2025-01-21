@@ -6,12 +6,16 @@
                 <div>
                     <p class="d-flex align-items-start">
                         <img class="img-fluid apostrope-img me-3" src="images/icons/Vector.svg" alt="apostrope-img">
-                        {{messageData[0].description}}
-                        <img class="img-fluid apostrope-img mt-5 ms-2" src="images/icons/Vector1.svg" alt="apostrope-img">
+                        <span class="description-wrapper">
+                            {{messageData[0].description}}
+                            <img class="img-fluid apostrope-img end-img ms-2" src="images/icons/Vector1.svg"
+                                alt="apostrope-img">
+                        </span>
                     </p>
                 </div>
                 <div class="d-flex align-items-end">
-                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnail}}" alt="">
+                    <img class="img-fluid"
+                        src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnail}}" alt="">
                     <div class="ms-3">
                         <h4><strong>{{messageData[0].name}}</strong></h4>
                         <h5><strong>{{messageData[0].designation}}</strong></h5>

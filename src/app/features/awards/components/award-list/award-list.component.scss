@@ -28,10 +28,26 @@ hr{
 .content{
     border: 2px solid #8D99AE;
     border-radius: 18px;
+    margin: 10px;
 }
 img{
     border-radius: 18px 0 0 18px;
 }
 .award-content{
     padding: 2% 5%;
+}
+@media (max-width: 767px){
+    .content{
+        box-shadow: 1px 4px 8px #959393;
+        border: none;
+    }
+    img{
+        border-radius: 18px;
+    }
+    .tabs{
+        padding: 12px 20px;
+    }
+    .tab-container{
+        overflow-x: auto;
+    }
 }

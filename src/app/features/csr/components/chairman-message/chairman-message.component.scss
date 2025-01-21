@@ -1,17 +1,30 @@
-h2{
+h2 {
     font-family: 'condensed' !important;
     color: var(--erm-tertiary-color);
 }
 
-p{
-    color: var(--erm-accent-font-color); 
+p {
+    color: var(--erm-accent-font-color);
 }
-.main-container{
+
+.main-container {
     background-color: var(--erm--neutral-font-color1);
 }
-h4{
+
+h4 {
     color: var(--erm-tertiary-color);
 }
-h5{
+
+h5 {
     color: #8D99AE;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.end-img {
+    align-self: flex-end;
+    margin-top: -2%;
 }
