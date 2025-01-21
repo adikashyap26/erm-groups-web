@@ -1,7 +1,5 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
-import lightGallery from 'lightgallery';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import { ActivatedRoute } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 
@@ -12,7 +10,8 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './mining-gallery.component.html',
   styleUrl: './mining-gallery.component.scss'
 })
-export class MiningGalleryComponent implements AfterViewInit{
+export class MiningGalleryComponent  {
+
 
   @ViewChild('galleryContainer', { static: false }) galleryContainer!: ElementRef;
   miningGalleryUrl = '/api/mining/miningGallery';
@@ -20,14 +19,11 @@ export class MiningGalleryComponent implements AfterViewInit{
   filterGallery: any;
   dataId: any;
 
-  settings = {
-    counter: true,
-    download: false,
-    plugins: [lgThumbnail]
-  }
-  private galleryInitialized = false; 
+  isLightboxOpen = false;
+  currentImage = '';
+  currentIndex = 0;
 
-  constructor(private http: HttpService, private activateRoute: ActivatedRoute,  private cdr: ChangeDetectorRef) { }
+  constructor(private http: HttpService, private activateRoute: ActivatedRoute, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {
@@ -38,34 +34,42 @@ export class MiningGalleryComponent implements AfterViewInit{
     })
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      if (this.filterGallery && !this.galleryInitialized) {
-        this.initializeGallery();
-      }
-    }, 0);
-  }
-
   OnLoadMiningGallery(url: any) {
     this.http.get(this.miningGalleryUrl).subscribe(response => {
       this.galleryData = response;
       this.filterGallery = this.galleryData.filter((p: any) => p.miningUrlId === url)
-      // console.log(this.filterGallery)
-      this.cdr.detectChanges()
-      if (this.filterGallery && !this.galleryInitialized) {
-        this.initializeGallery();
-      }
     })
   }
 
-  initializeGallery() {
-    if (typeof window !== 'undefined' && this.galleryContainer?.nativeElement) {
-      lightGallery(this.galleryContainer.nativeElement, {
-        selector: '.gallery-item',
-        plugins: [lgThumbnail],
-        speed: 500,
-      });
-      this.galleryInitialized = true; 
-    }
+
+  openLightbox(index: number) {
+    this.isLightboxOpen = true;
+    this.currentIndex = index;
+    this.currentImage =
+      'https://erm-backend-deploy-production.up.railway.app/' +
+      this.filterGallery[index].thumbnail;
+  }
+
+  closeLightbox() {
+    this.isLightboxOpen = false;
+  }
+
+  prevImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex =
+      (this.currentIndex - 1 + this.filterGallery.length) %
+      this.filterGallery.length;
+    this.currentImage =
+      'https://erm-backend-deploy-production.up.railway.app/' +
+      this.filterGallery[this.currentIndex].thumbnail;
+  }
+
+  nextImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex = (this.currentIndex + 1) % this.filterGallery.length;
+    this.currentImage =
+      'https://erm-backend-deploy-production.up.railway.app/' +
+      this.filterGallery[this.currentIndex].thumbnail;
   }
 }
+

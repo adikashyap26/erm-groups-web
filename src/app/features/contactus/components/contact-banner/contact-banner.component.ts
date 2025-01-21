@@ -3,6 +3,7 @@ import { HttpService } from '../../../../service/http.service';
 import { NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+
 @Component({
   selector: 'app-contact-banner',
   standalone: true,

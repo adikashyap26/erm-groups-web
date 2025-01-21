@@ -1,26 +1,24 @@
 import { Component } from '@angular/core';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactBannerComponent } from './components/contact-banner/contact-banner.component';
-import { FormComponent } from './components/form/form.component';
 import { MapComponent } from './components/map/map.component';
-import { HttpService } from '../../service/http.service';
 import { NgFor, NgIf } from '@angular/common';
-
+import { HttpService } from '../../service/http.service';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-contactus',
   standalone: true,
-  
   imports: [
-      ContactBannerComponent,
-      FormComponent,
-      MapComponent,
-      NgFor,
-      NgIf
-    ],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    ContactBannerComponent,
+    ContactFormComponent,
+    MapComponent,
+    NgFor,
+    NgIf
+  ],
+  templateUrl: './contactus.component.html',
+  styleUrl: './contactus.component.scss'
 })
-export class ContactComponent {
+export class ContactusComponent {
   Url = '/api/contact/contactDetail'
   data: any;
 

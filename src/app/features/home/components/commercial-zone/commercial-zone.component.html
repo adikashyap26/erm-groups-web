@@ -1,63 +1,52 @@
 <div class="main-container">
-    <div class="container">
-        <div class="row">
-            <h2>ERM Commercial<br> Zone</h2>
-          
-            <ng-container class="custom-tab-container">
-                <div class="tab-container" *ngIf="data">
-                  <div class="tab-header">
-                    <div class="tab" 
-                         *ngFor="let item of data; let i = index;" 
-                         [class.active]="i === activeTabIndex" 
-                         (click)="selectTab(item._id, i)">
-                      {{ item.title }}
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="tab-content">
-                  <!-- Conditional loading message (optional) -->
-                  <div *ngIf="loading; else loadedContent">
-                    <div class="loading-message">Loading...</div>
-                  </div>
-              
-                  <!-- Loaded content after tab is selected -->
-                  <ng-template #loadedContent>
-                    <div *ngIf="subData && subData.length > 0">
-                     <div *ngFor="let item of subData">
-                        <h4>{{ item.title }}</h4>
-                        <img class="img-fluid infographic py-3" 
-                             [src]="'https://erm-backend-deploy-production.up.railway.app/' + item.thumbnilTwo" 
-                             alt="">
-                        <h3>{{ item.sub_title }}</h3>
-                        <p>{{ item.sub_description }}</p>
-                     </div>
-                      <ngx-slick-carousel class="carousel" [config]="configSlide">
-                        <div ngxSlickItem *ngFor="let item of subData" class="slide">
-                          <div>
-                            <h4>{{ item.title }}</h4>
-                            <img class="img-fluid infographic py-3" 
-                                 [src]="'https://erm-backend-deploy-production.up.railway.app/' + item.thumbnilTwo" 
-                                 alt="">
-                            <h3>{{ item.sub_title }}</h3>
-                            <p>{{ item.sub_description }}</p>
-                            <h5><span>{{ item.buttons }} &rarr;</span></h5>
+  <div class="container">
+      <div class="row">
+          <h2>ERM Commercial<br> Zone</h2>
+          <mat-tab-group (selectedTabChange)="onTabChange($event)">
+              <mat-tab *ngFor="let tab of data" [label]="tab.title">
+                  <ng-container *ngIf="loading; else loadedData">
+                      <div class="loading-message">
+                          <p>Loading...</p>
+                      </div>
+                  </ng-container>
+
+                  <ng-template #loadedData>
+                      <ng-container *ngIf="subData && subData.length > 0; else noDataTemplate">
+                          <ngx-slick-carousel class="carousel" [config]="slideConfig">
+                              <div ngxSlickItem *ngFor="let item of subData" class="slide">
+                                  <div>
+                                      <h4>{{ item.title }}</h4>
+                                      <img class="img-fluid infographic py-3" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnilTwo}}" alt="">
+                                      <h3>{{item.sub_title}}</h3>
+                                      <p>{{ item.sub_description }}</p>
+                                      <h5><span>{{item.buttons}} &rarr;</span></h5>
+                                  </div>
+                                  <div class="banner-carousel">
+                                      <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                                  </div>
+                              </div>
+                          </ngx-slick-carousel>
+                      </ng-container>
+
+                      <ng-template #noDataTemplate>
+                          <div class="no-data-message">
+                              <p>We will update soon.</p>
                           </div>
-                          <div class="banner-carousel">
-                            <img class="img-fluid" 
-                                 [src]="'https://erm-backend-deploy-production.up.railway.app/' + item.thumbnail" 
-                                 alt="">
-                          </div>
-                        </div>
-                      </ngx-slick-carousel>
-                    </div>
-                    <div *ngIf="subData && subData.length === 0" class="no-data-message">
-                      <p>We will update soon.</p>
-                    </div>
+                      </ng-template>
                   </ng-template>
-                </div>
-              </ng-container>
-              
-        </div>
-    </div>
+              </mat-tab>
+          </mat-tab-group>
+      </div>
+  </div>
 </div>
+
+
+
+
+<!-- <ngx-slick-carousel class="carousel" [config]="slideConfig">
+                          <div ngxSlickItem *ngFor="let item of carouselData.carousel" class="slide">
+                              <div class="banner-carousel">
+                                  <img class="img-fluid" src="{{item.img}}" alt="">
+                              </div>
+                          </div>
+                      </ngx-slick-carousel> -->

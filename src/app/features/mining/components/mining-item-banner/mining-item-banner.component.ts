@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { HttpService } from '../../../../service/http.service';
 import { HttpClient } from '@angular/common/http';
 import { NgIf } from '@angular/common';
 

@@ -9,9 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './map.component.html',
   styleUrl: './map.component.scss'
 })
-
-
-export class MapComponent implements OnChanges  {
+export class MapComponent implements OnChanges {
   @Input() mapDetail: any;
   sanitizedMapUrl!: SafeResourceUrl;
 

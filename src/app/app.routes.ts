@@ -39,8 +39,8 @@ export const routes: Routes = [
         loadChildren: () => import('./features/reports/reports.module').then(m => m.ReportsModule)
     },
     {
-        path: 'contact',
-        loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule)
+        path: 'contact-us',
+        loadChildren: () => import('./features/contactus/contactus.module').then(m => m.ContactusModule)
     },
     {
         path: 'career',

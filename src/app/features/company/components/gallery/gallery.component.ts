@@ -1,8 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input, ChangeDetectorRef, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import lightGallery from 'lightgallery';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import { HttpService } from '../../../../service/http.service';
 
 @Component({
@@ -12,14 +10,18 @@ import { HttpService } from '../../../../service/http.service';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements AfterViewInit {
+export class GalleryComponent {
   @ViewChild('galleryContainer', { static: false }) galleryContainer!: ElementRef;
 
   @Input() galleryId: any;
   galleryUrl = '/api/company/companyGalleryByUrl';
-  galleryData: any;
   private galleryInitialized = false;
-  
+  galleryData: any;
+  filterGallery: any;
+  dataId: any;
+  isLightboxOpen = false;
+  currentImage = '';
+  currentIndex = 0;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -33,33 +35,50 @@ export class GalleryComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {
-    // Ensure the gallery initializes after the data is loaded
-    this.cdr.detectChanges();
-    if (this.galleryData && !this.galleryInitialized) {
-      this.initializeGallery();
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['galleryId'] && this.galleryId?.urlId) {
+      this.loadGalleryData(this.galleryId.urlId);
     }
   }
+
+  closeLightbox() {
+    this.isLightboxOpen = false;
+  }
+
+
+  openLightbox(index: number) {
+    this.isLightboxOpen = true;
+    this.currentIndex = index;
+    this.currentImage = 'https://erm-backend-deploy-production.up.railway.app/' + this.filterGallery[index].thumbnail;
+  }
+
 
   loadGalleryData(url: any) {
     const requestUrl = `${this.galleryUrl}/${url}`;
-    this.http.get(requestUrl).subscribe((response) => {
-      this.galleryData = response;
-      this.cdr.detectChanges(); // Ensure the view updates
-      if (!this.galleryInitialized) {
-        this.initializeGallery();
+    this.http.get(requestUrl).subscribe(
+      (response:any) => {
+        this.galleryData = response.data;
+        this.filterGallery = response.data;
+        console.log(this.galleryData)
+      },
+      (error) => {
+        this.galleryData = null;
       }
-    });
+    );
   }
 
-  initializeGallery() {
-    if (typeof window !== 'undefined' && this.galleryContainer?.nativeElement) {
-      lightGallery(this.galleryContainer.nativeElement, {
-        selector: '.gallery-item',
-        plugins: [lgThumbnail],
-        speed: 500,
-      });
-      this.galleryInitialized = true;
-    }
+
+  prevImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex =
+      (this.currentIndex - 1 + this.filterGallery.length) %
+      this.filterGallery.length;
+      this.currentImage =  'https://erm-backend-deploy-production.up.railway.app/' +  this.filterGallery[this.currentIndex].thumbnail;
   }
-}
+
+  nextImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex = (this.currentIndex + 1) % this.filterGallery.length;
+    this.currentImage ='https://erm-backend-deploy-production.up.railway.app/' +  this.filterGallery[this.currentIndex].thumbnail;
+  }
+} 

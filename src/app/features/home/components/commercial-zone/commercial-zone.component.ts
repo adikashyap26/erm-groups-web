@@ -1,9 +1,10 @@
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewChecked, ApplicationRef, ChangeDetectorRef, Component, NgZone, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import {MatTabChangeEvent, MatTabsModule} from '@angular/material/tabs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpService } from '../../../../service/http.service';
+import { Router } from 'express';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,75 +14,83 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './commercial-zone.component.html',
   styleUrl: './commercial-zone.component.scss'
 })
-export class CommercialZoneComponent implements AfterViewChecked{
+export class CommercialZoneComponent {
   responseData: any;
   filteredData: any;
   carouselData: any;
   filteredSubchild: any;
   urlCategory = '/api/home/ermCommericialZoneCategory';
-  InnerUrl =  '/api/home/ErmCommericialZoneCategoryData';
+  InnerUrl =  '/api/home/ErmCommericialZoneCategoryDataByCategory';
   data: any;
   InnerData:any;
   subData:any;
   loading = false;
-  activeTabIndex: number | null = null;
 
-  @ViewChild('slickCarousel') slickCarousel: any;
 
-  constructor(private http: HttpService, private httpData: HttpClient,  private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
+
+  constructor(private http: HttpService, private httpData: HttpClient,  private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.onLoadCategory();
-    this.onLoadZoneCategory();
-  }
-
-  ngAfterViewChecked() {
-    if (this.activeTabIndex !== null && this.subData && this.subData.length > 0) {
-      // Reinitialize the Slick carousel when content is updated
-      setTimeout(() => {
-        if (this.slickCarousel) {
-          this.slickCarousel.slick('unslick');
-          this.slickCarousel.slick('reinit');
-        }
-      }, 100); // Adjust the delay to ensure Slick initializes correctly
-    }
+    this.route.queryParams.subscribe(params => {
+      if (params['reloadData']) {
+        this.onLoadCategory();
+      }
+    });
   }
 
   onLoadCategory() {
     this.http.get(this.urlCategory).subscribe(response => {
-      this.data = response;    
-      console.log(this.data)
+      this.data = response;
+      if (this.data.length > 0) {
+        this.onTabChange({ index: 0 } as MatTabChangeEvent);
+      } else {
+        this.subData = { message: 'We will update soon' };
+        console.log('No data found: We will update soon');
+      }
     });
   }
 
-  onLoadZoneCategory(){
-    this.http.get(this.InnerUrl).subscribe(response => {
-      this.InnerData = response;
-      console.log(this.InnerData)
-    })
-  }
-
-  selectTab(id: any, index: number){
-    console.log(id);   
-    this.activeTabIndex = index;
-    this.subData = this.InnerData.filter((p: any) => p.ermCommericalZoneCategoryId._id === id)
-    console.log(this.subData);
-    this.cdr.detectChanges()
-
-    setTimeout(() => {
-      if (this.slickCarousel) {
-        this.slickCarousel.slick('unslick');
-        this.slickCarousel.slick('reinit');
+  onTabChange(event: MatTabChangeEvent): void {
+    const selectedTab = this.data[event.index];
+    if (!selectedTab || !selectedTab._id) {
+      console.error('Invalid tab selected:', selectedTab);
+      this.subData = [];
+      this.loading = false;
+      return;
+    }
+    this.subData = null;
+    this.loading = true; 
+    let url = `${this.InnerUrl}/${selectedTab._id}`;
+  
+    this.http.get(url).subscribe(
+      (response) => {
+        this.subData = response;
+        this.loading = false; 
+        console.log(this.subData);
+      },
+      (error) => {
+        console.error('Error fetching data:', error);
+        this.subData = [];
+        this.loading = false; 
       }
-    }, 0);
+    );
   }
 
-  configSlide = {
+  slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
+    dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,  
+    autoplaySpeed: 2000,
   };
+
+  configSlide={
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true
+  }
 
 }

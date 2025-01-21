@@ -3,15 +3,16 @@ import { Component, Input } from '@angular/core';
 import { FormsModule, FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from '../../../../service/http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgFor, NgIf],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  imports: [FormsModule, ReactiveFormsModule, NgFor, NgIf, MatProgressSpinnerModule],
+  templateUrl: './contact-form.component.html',
+  styleUrl: './contact-form.component.scss'
 })
-export class FormComponent {
+export class ContactFormComponent {
   contactForm!: FormGroup;
   contactFormUrl = '/api/contact/sendContactDetail'
   @Input() formDetail: any = [];
@@ -37,14 +38,13 @@ export class FormComponent {
   }
 
   onSubmit() {
-    debugger
     this.spinner = true;
     if (this.contactForm.valid) {
   
       this.http.post(this.contactFormUrl, this.contactForm.getRawValue()).subscribe(
         response => {
           this.contacatData = response;
-          console.log(this.contacatData)
+          this.spinner = false;
           this.contactForm.reset();
           this.snackbar.open('Thank you for reaching out, we will get back to you soon', 'Okay', { duration: 5000 });
         

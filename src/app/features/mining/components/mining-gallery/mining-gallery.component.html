@@ -1,11 +1,21 @@
 <div class="main-container py-5">
     <div class="container" *ngIf="galleryData" #galleryContainer>
         <div class="row">
-            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4 my-2 content" *ngFor="let img of filterGallery; let i = index">
-                <a [attr.data-src]="'https://erm-backend-deploy-production.up.railway.app/' + img.thumbnail" class="gallery-item">
-                    <img class="img-fluid" [src]="'https://erm-backend-deploy-production.up.railway.app/' + img.thumbnail" alt="Image {{ i + 1 }}">
-                </a>
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4 my-2 content"
+                *ngFor="let img of filterGallery; let i = index">
+                <img class="img-fluid gallery-thumbnail"
+                    [src]="'https://erm-backend-deploy-production.up.railway.app/' + img?.thumbnail"
+                    alt="Image {{ i + 1 }}" (click)="openLightbox(i)" />
             </div>
+        </div>
+    </div>
+
+    <div class="lightbox" *ngIf="isLightboxOpen" (click)="closeLightbox()">
+        <div class="lightbox-content" (click)="$event.stopPropagation()">
+            <img [src]="currentImage" class="lightbox-image" alt="Selected Image" />
+            <button class="prev" (click)="prevImage($event)">&#10094;</button>
+            <button class="next" (click)="nextImage($event)">&#10095;</button>
+            <button class="close" (click)="closeLightbox()">&times;</button>
         </div>
     </div>
 </div>
