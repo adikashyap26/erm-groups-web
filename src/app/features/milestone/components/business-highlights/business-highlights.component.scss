@@ -1,15 +1,33 @@
-.highlight-container{
+.highlight-container {
     display: flex;
 }
-.content{
+
+.content {
     flex: 30%;
     margin: 10px 20px;
 }
-h2{
+
+h2 {
     font-family: 'condensed' !important;
     color: var(--erm-tertiary-color);
 }
 
-p{
-    color: var(--erm-accent-font-color); 
+p {
+    color: var(--erm-accent-font-color);
+}
+
+@media (max-width: 767px) {
+    .content {
+        margin: 20px 0;
+    }
+
+    .highlight-container {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content {
+        margin: 10px;
+    }
 }

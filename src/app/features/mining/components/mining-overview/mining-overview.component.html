@@ -1,17 +1,19 @@
 <div class="main-container" *ngIf="miningListData">
     <div class="container">
         <div class="row" *ngIf="urlId">
-            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnail}}" alt="">
+            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnail}}"
+                alt="">
         </div>
         <div class="row pt-5" *ngIf="miningListData">
-            <div class="col-xl-3 col-lg-3">
-                <div class="mining mb-4" >
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+                <div class="mining mb-4">
                     <h4>Mines</h4>
                     <hr>
-                    <div *ngFor="let item of miningListData; let i=index"
-                        [class.active]="item.url === activeUrl">
-                        <h6 (click)="onClickMine(item.url)">{{item.sub_title | uppercase}} </h6>
-                        <hr *ngIf="i < miningListData.length - 1">
+                    <div class="mining-content">
+                        <div *ngFor="let item of miningListData; let i=index" [class.active]="item.url === activeUrl">
+                            <h6 (click)="onClickMine(item.url)">{{item.sub_title | uppercase}} </h6>
+                            <hr *ngIf="i < miningListData.length - 1">
+                        </div>
                     </div>
                 </div>
                 <div class="reports mb-4" *ngIf="reportsData">
@@ -30,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-xl-9" *ngIf="urlId">
+            <div class="col-lg-9 col-xl-9 col-sm-12 col-md-12" *ngIf="urlId">
                 <div class="mb-4">
                     <h3>{{urlId[0]?.section_title}}</h3>
                     <p class="py-2">{{urlId[0]?.section_description_one}}</p>
@@ -43,7 +45,8 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnilTwo}}" alt="">
+                    <img class="img-fluid"
+                        src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnilTwo}}" alt="">
                 </div>
             </div>
         </div>

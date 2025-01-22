@@ -27,6 +27,7 @@ h1 {
     ul {
         display: flex;
         list-style: none;
+        flex-wrap: wrap;
     }
 
     a {
@@ -37,5 +38,21 @@ h1 {
 
     li {
         color: var(--erm-secondary-color-shade3);
+    }
+}
+
+
+img {
+    width: 100%;
+    min-height: 120px;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .breadcrumbs {
+        bottom: -15px;
     }
 }

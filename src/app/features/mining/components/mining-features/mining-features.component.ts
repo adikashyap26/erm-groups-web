@@ -18,6 +18,10 @@ export class MiningFeaturesComponent {
   filterScientificOperations: any;
   filterminenvironment: any;
   filterRehabilitation: any;
+  reportsUrl = '/api/mining/miningReports';
+  reportsData: any;
+  reportPdf: any;
+  pdfData: any;
 
   constructor(private http: HttpService, private activateRoute: ActivatedRoute) { }
 
@@ -27,6 +31,7 @@ export class MiningFeaturesComponent {
       if (this.dataId) {
         this.onLoadMiningFeatures(param.get('url'));
       }
+      this.onLoadReports()
     })
   }
 
@@ -38,5 +43,17 @@ export class MiningFeaturesComponent {
       this.filterminenvironment = this.filterMiningData[1];
       this.filterRehabilitation = this.filterMiningData[2];
     })
+  }
+
+  onLoadReports() {
+    this.http.get(this.reportsUrl).subscribe(response => {
+      this.reportsData = response;
+    })
+  }
+
+  onClickReport(id: any) {
+    this.reportPdf = this.reportsData.find((p: any) => p._id === id)
+    this.pdfData = `https://erm-backend-deploy-production.up.railway.app/${this.reportPdf.filesData}`
+    window.open(this.pdfData, '_blank')
   }
 }

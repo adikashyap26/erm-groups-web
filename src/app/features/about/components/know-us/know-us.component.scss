@@ -35,3 +35,8 @@ p{
 ::-webkit-scrollbar{
     display: none;
 }
+@media (max-width: 767px){
+    .content{
+        min-width: 260px;
+    }
+}

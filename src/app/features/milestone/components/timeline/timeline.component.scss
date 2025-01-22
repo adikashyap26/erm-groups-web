@@ -91,3 +91,20 @@ h3 {
     font-size: 7rem;
     margin-bottom: 4%;
 }
+.slider-item{
+    margin: 0 10px;
+}
+
+@media (max-width: 767px){
+    hr{
+        margin-top: 1.9rem;
+    }
+    h3{
+        text-align: center;
+    }
+}
+@media (min-width: 1500px){
+    hr{
+        margin-top: 1.5rem;
+    }
+}

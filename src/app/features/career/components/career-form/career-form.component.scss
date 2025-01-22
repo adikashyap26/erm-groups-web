@@ -78,3 +78,9 @@ button {
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1000;
 }
+@media (max-width: 767px){
+    .sendButton{
+        display: flex;
+        justify-content: center;
+    }
+}

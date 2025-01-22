@@ -1,11 +1,6 @@
 .gallery-thumbnail {
     cursor: pointer;
-    transition: transform 0.3s ease;
     border-radius: 20px;
-}
-
-.gallery-thumbnail:hover {
-    transform: scale(1.05);
 }
 
 .lightbox {
@@ -66,4 +61,10 @@ button.next {
     top: 50%;
     right: -15%;
     transform: translateY(-50%);
+}
+
+@media (max-width: 767px){
+    .lightbox-image{
+        border-radius: 20px;
+    }
 }

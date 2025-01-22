@@ -1,40 +1,23 @@
-h2{
+h2 {
     font-family: 'condensed' !important;
     color: var(--erm-tertiary-color);
 }
-// .number-stroke {
-//     text-align: center;
-//     font-weight: 700;
-//     font-size: 15rem;
-//     background-size: contain;
-// }
 
-// .stroke-bg1 {
-//     background-image: url('/images/about/manufacture.png');
-//     background-repeat: no-repeat;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-// }
-h3{
+h3 {
     color: var(--erm-secondary-color-shade3);
 }
 
-// .stroke-bg2 {
-//     background-image: url('/images/about/manufacture.png');
-//     background-repeat: no-repeat;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-// }
-// .stroke-bg3 {
-//     background-image: url('/images/about/manufacture.png');
-//     background-repeat: no-repeat;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-// }
-p{
-    color: var(--erm-accent-font-color); 
+p {
+    color: var(--erm-accent-font-color);
 }
-span{
+
+span {
     color: var(--erm-secondary-color-shade3);
     font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .ethicsData {
+        flex-direction: column-reverse;
+    }
 }

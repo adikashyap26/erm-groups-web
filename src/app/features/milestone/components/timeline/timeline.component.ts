@@ -101,7 +101,21 @@ export class TimelineComponent {
     slidesToShow: 7,
     slidesToScroll: 1,
     arrows: false,
-    asNavFor: '.slider-for'
+    asNavFor: '.slider-for',
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 5
+        }
+      }
+    ]
   };
 
   goToPrevSlide() {

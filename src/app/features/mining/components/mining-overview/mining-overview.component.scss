@@ -1,30 +1,67 @@
-.mining, .reports{
+.mining,
+.reports {
     border: 2px solid #8D99AE;
     border-radius: 20px;
     padding: 14px 12px;
     background-color: var(--erm--neutral-font-color1);
-    h4{
+
+    h4 {
         color: #404574;
         font-family: 'condensed' !important;
     }
-    h6{
-        color: #404574; 
+
+    h6 {
+        color: #404574;
         cursor: pointer;
         font-weight: 500;
     }
-    span{
+
+    span {
         font-weight: 600;
         font-size: 22px;
         color: var(--erm-secondary-color-shade3);
     }
 }
-.active h6{
+
+.active h6 {
     color: red !important;
 }
-p{
-    color: var(--erm-accent-font-color); 
+
+p {
+    color: var(--erm-accent-font-color);
 }
-h3{
+
+h3 {
     font-family: 'condensed' !important;
-    color: #404574; 
+    color: #404574;
+}
+
+@media (max-width: 991px) {
+    .mining {
+        border: none;
+        background-color: none;
+    }
+
+    .mining hr {
+        display: none;
+    }
+
+    .mining-content {
+        display: flex;
+        overflow-x: auto;
+        margin: 10px 0;
+
+        h6 {
+            margin: 0 7px;
+            white-space: nowrap;
+        }
+
+        div {
+            border-right: 1px solid grey;
+        }
+    }
+
+    .reports {
+        display: none;
+    }
 }
