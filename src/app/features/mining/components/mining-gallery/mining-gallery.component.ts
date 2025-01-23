@@ -48,10 +48,12 @@ export class MiningGalleryComponent  {
     this.currentImage =
       'https://erm-backend-deploy-production.up.railway.app/' +
       this.filterGallery[index].thumbnail;
+      document.body.style.overflowY = 'hidden';
   }
 
   closeLightbox() {
     this.isLightboxOpen = false;
+    document.body.style.overflowY = 'auto'
   }
 
   prevImage(event: Event) {

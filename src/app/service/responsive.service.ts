@@ -11,9 +11,11 @@ export class ResponsiveService {
 
   openResponsive() {
     this.isResponsiveOpen.next(true);
+     document.body.style.overflowY = 'hidden'
   }
 
   closeResponsive() {
     this.isResponsiveOpen.next(false);
+    document.body.style.overflowY = 'auto';
   }
 }
