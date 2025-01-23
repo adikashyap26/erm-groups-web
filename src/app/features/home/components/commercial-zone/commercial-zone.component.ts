@@ -1,18 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { NgFor, NgIf } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import {MatTabChangeEvent, MatTabsModule} from '@angular/material/tabs';
+import { Component,ViewChild,ElementRef } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpService } from '../../../../service/http.service';
-import { Router } from 'express';
 import { ActivatedRoute } from '@angular/router';
-
+import { ChangeDetectorRef } from '@angular/core';
+declare var bootstrap: any;
 @Component({
   selector: 'app-commercial-zone',
   standalone: true,
-  imports: [NgFor, NgIf,MatTabsModule, SlickCarouselModule],
+  imports: [NgFor, NgIf, MatTabsModule, SlickCarouselModule, CommonModule],
   templateUrl: './commercial-zone.component.html',
-  styleUrl: './commercial-zone.component.scss'
+  styleUrls: ['./commercial-zone.component.scss']
 })
 export class CommercialZoneComponent {
   responseData: any;
@@ -20,62 +20,48 @@ export class CommercialZoneComponent {
   carouselData: any;
   filteredSubchild: any;
   urlCategory = '/api/home/ermCommericialZoneCategory';
-  InnerUrl =  '/api/home/ErmCommericialZoneCategoryDataByCategory';
-  data: any;
-  InnerData:any;
-  subData:any;
+  InnerUrl = '/api/home/ErmCommericialZoneCategoryDataByCategory';
+  data: any[] = [];
+  subData: any[] = [];
   loading = false;
+  selectedTabIndex = 0;
+  mainTab: any;
+  TabData: any;
+  currentIndex = 0; // Track the current slide
+  selectedCategoryId: number | null = null;
 
-
-
-  constructor(private http: HttpService, private httpData: HttpClient,  private route: ActivatedRoute) { }
-
+  constructor(private http: HttpService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
+  @ViewChild('slickCarousel', { static: true }) slickCarousel!: ElementRef;
   ngOnInit() {
-    this.onLoadCategory();
-    this.route.queryParams.subscribe(params => {
-      if (params['reloadData']) {
-        this.onLoadCategory();
-      }
-    });
+    this.onLoadMainCategory();
   }
 
-  onLoadCategory() {
+  onLoadMainCategory() {
     this.http.get(this.urlCategory).subscribe(response => {
-      this.data = response;
-      if (this.data.length > 0) {
-        this.onTabChange({ index: 0 } as MatTabChangeEvent);
-      } else {
-        this.subData = { message: 'We will update soon' };
-        console.log('No data found: We will update soon');
+      this.mainTab = response;
+      if (this.mainTab && this.mainTab.length > 0) {
+        this.onClickMainTab(this.mainTab[0]._id);
       }
     });
   }
 
-  onTabChange(event: MatTabChangeEvent): void {
-    const selectedTab = this.data[event.index];
-    if (!selectedTab || !selectedTab._id) {
-      console.error('Invalid tab selected:', selectedTab);
-      this.subData = [];
-      this.loading = false;
-      return;
-    }
-    this.subData = null;
-    this.loading = true; 
-    let url = `${this.InnerUrl}/${selectedTab._id}`;
-  
-    this.http.get(url).subscribe(
-      (response) => {
-        this.subData = response;
-        this.loading = false; 
-        console.log(this.subData);
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-        this.subData = [];
-        this.loading = false; 
+  onClickMainTab(id: any) {
+    this.selectedCategoryId = id;
+    this.TabData = [];
+
+    // Ensure the carousel is refreshed after the data is updated
+    const url = `${this.InnerUrl}/${id}`;
+    this.http.get(url).subscribe(response => {
+      this.TabData = response;
+      
+      // Wait for the data to be updated before refreshing the carousel
+      if (this.slickCarousel && this.slickCarousel.nativeElement) {
+        // Refresh the slick carousel after data is loaded
+        this.slickCarousel.nativeElement.slick('refresh');
       }
-    );
+    });
   }
+
 
   slideConfig = {
     slidesToShow: 1,
@@ -92,5 +78,6 @@ export class CommercialZoneComponent {
     dots: true,
     infinite: true
   }
+
 
 }

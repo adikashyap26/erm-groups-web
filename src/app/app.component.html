@@ -4,3 +4,11 @@
   <app-call-to-action></app-call-to-action>
   <app-footer></app-footer>
 </div>
+
+
+<div class="overlay" (click)="responsiveService.openResponsive()"  *ngIf="responsiveService.isResponsiveOpen | async"></div>
+
+<div class="nav" *ngIf="responsiveService.isResponsiveOpen | async">
+    <app-responsive-header></app-responsive-header>
+</div>
+

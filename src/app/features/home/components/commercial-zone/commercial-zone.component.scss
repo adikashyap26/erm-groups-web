@@ -1,83 +1,111 @@
 h2{
-    font-family: 'condensed' !important;
-    color: var(--erm-tertiary-color);
+  font-family: 'condensed' !important;
+  color: var(--erm-tertiary-color);
 }
 .carousel-content{
-    display: flex;
+  display: flex;
 }
 .carousel{
-    margin-top: 3%;
+  margin-top: 3%;
 }
 .slide{
-    display: flex;
+  display: flex;
 }
 .slide>div{
-    padding-right: 1%;
+  padding-right: 1%;
 }
 h3, span{
-    color: var(--erm-secondary-color);
+  color: var(--erm-secondary-color);
 }
 p{
-    color: var(--erm-accent-font-color);
+  color: var(--erm-accent-font-color);
 }
 ::ng-deep .mat-mdc-tab-body-content{
-    overflow: hidden !important;
+  overflow: hidden !important;
 }
 ::ng-deep .mat-mdc-tab-labels{
-    width: 60%;
-    float: right;
+  width: 60%;
+  float: right;
 }
 ::ng-deep .mat-mdc-tab-group{
-    margin-top: -4%;
+  margin-top: -4%;
 }
 .infographic{
-    height: 100px;
+  height: 100px;
 }
 
 
 .loading-message {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #999;
-    padding: 20px;
-  }
-  
-  .no-data-message {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    padding: 20px;
-  }
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+  padding: 20px;
+}
+
+.no-data-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+}
 
 
-  .custom-tab-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tab-header {
-    display: flex;
-    border-bottom: 2px solid #ccc;
-  }
-  
-  .tab-title {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid transparent;
-  }
-  
-  .tab-title.active {
-    font-weight: bold;
-    border-bottom: 2px solid #007bff;
-  }
-  
-  .tab-content {
-    margin-top: 20px;
-  }
-  
-  .loading-message,
-  .no-data-message {
-    text-align: center;
-    font-style: italic;
-  }
-  
+.custom-tab-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab-title {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.tab-title.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.loading-message,
+.no-data-message {
+  text-align: center;
+  font-style: italic;
+}
+
+
+.carousel-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.category-container {
+  display: flex;
+  gap: 150px;
+  font-size: 19px;
+}
+
+.category-container div {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.category-container .selected {
+  color: #ED3237; 
+  border-bottom: 2px solid #ED3237; 
+}
