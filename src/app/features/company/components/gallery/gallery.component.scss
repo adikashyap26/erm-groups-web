@@ -2,6 +2,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     border-radius: 20px;
+    height: 100%;
 }
 
 .gallery-thumbnail:hover {
@@ -66,4 +67,12 @@ button.next {
     top: 50%;
     right: -15%;
     transform: translateY(-50%);
+}
+
+
+@media (max-width: 767px){
+    .gallery-thumbnail {
+    width: 100%;
+    }
+    
 }

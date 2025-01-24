@@ -23,3 +23,9 @@ a{
 hr{
     margin: 30px 0;
 }
+
+@media (max-width: 767px){
+    h3{
+        margin-top: 15px;
+    }
+}

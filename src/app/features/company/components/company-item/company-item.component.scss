@@ -12,3 +12,11 @@
         margin-right: 4%;
     }
 }
+
+
+@media (max-width: 500px){
+    .content{
+        overflow-x: scroll;
+        flex-direction: column;
+    }
+}
