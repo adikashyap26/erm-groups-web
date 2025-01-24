@@ -11,11 +11,15 @@ export class LoaderService {
 
   show() {
     this.loadingSubject.next(true);
-     document.body.style.overflowY = 'hidden'
+    if (typeof document !== 'undefined') {
+      document.body.style.overflowY = 'hidden';
+    }
   }
 
   hide() {
     this.loadingSubject.next(false);
-    document.body.style.overflowY = 'auto';
+    if (typeof document !== 'undefined') {
+      document.body.style.overflowY = 'auto';
+    }
   }
 }
