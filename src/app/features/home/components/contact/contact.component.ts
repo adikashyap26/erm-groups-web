@@ -26,7 +26,7 @@ export class ContactComponent {
   }
 
   onClickContact(){
-    this.router.navigate(['/contact']);
+    this.router.navigate(['/contact-us']);
     window.scrollTo(0, 0)
   }
 
