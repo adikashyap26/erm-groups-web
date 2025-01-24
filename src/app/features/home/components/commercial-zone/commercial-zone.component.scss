@@ -6,7 +6,7 @@ h2{
   display: flex;
 }
 .carousel{
-  margin-top: 3%;
+  margin-top: 2%;
 }
 .slide{
   display: flex;
@@ -41,6 +41,14 @@ p{
   color: #999;
   padding: 20px;
 }
+
+.no-data-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+}
+
 
 .no-data-message {
   text-align: center;
@@ -98,6 +106,7 @@ p{
   display: flex;
   gap: 150px;
   font-size: 19px;
+  color: #666666;
 }
 
 .category-container div {
@@ -108,4 +117,28 @@ p{
 .category-container .selected {
   color: #ED3237; 
   border-bottom: 2px solid #ED3237; 
+  font-weight: 500;
+}
+
+@media (max-width: 991px){
+  .heading{
+    display: block;
+    margin-bottom: 20px;
+  }
+  h2{
+    margin-bottom: 4%;
+  }
+  br{
+    display: none;
+  }
+  .category-container{
+    gap: 0px;
+    font-size: 16px;
+  }
+  .category-container div{
+    margin: 0 5px;
+  }
+  .slide{
+    display: block;
+  }
 }

@@ -1,16 +1,15 @@
 <div class="brand-container py-4">
-    <div class="container">
-        <div class="row">
-            <h3 class="mb-4"><strong>Explore our Premier Brand</strong></h3>
-        </div>
+    <div class="brand-row">
+        <h3 class="mb-4"><strong>Explore our Premier Brand</strong></h3>
     </div>
     <div class="brand-img-container">
         <div class="row mx-0" *ngFor="let item of data">
-            <div class="col-lg-5 col-xl-5 col-sm-12 col-md-6 brand-content px-5 py-4">
+            <div class="col-lg-5 col-xl-5 col-sm-12 col-md-6 brand-content py-4">
                 <h4 class="brand-color"><strong>{{item.title}}</strong></h4>
                 <div class="text-center mt-4">
                     <img class="img-fluid turbo-img" src="images/icons/TURBOSTEEL-LOGO 1.svg" alt=""><br>
-                   <button class="my-4" (click)="onClickButton(item.link)">{{item.button}}<span><img class="img-fluid arrow-img" src="images/icons/Vector 1.svg" alt="arrow"></span></button>
+                    <button class="my-4" (click)="onClickButton(item.link)">{{item.button}}<span><img
+                                class="img-fluid arrow-img" src="images/icons/Vector 1.svg" alt="arrow"></span></button>
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-sm-12 col-md-6"></div>

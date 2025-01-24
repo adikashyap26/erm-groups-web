@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-working',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, SlickCarouselModule],
   templateUrl: './working.component.html',
   styleUrl: './working.component.scss'
 })
@@ -26,5 +26,16 @@ export class WorkingComponent {
       this.working = response;
     })
   }
+
+  
+  slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    arrows: false,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+  };
 
 }

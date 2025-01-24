@@ -35,5 +35,19 @@ export class SocialResponsibilityComponent {
     autoplaySpeed: 1000,
     centerMode: true,
     centerPadding: '60px',
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+    ]
   };
 }
