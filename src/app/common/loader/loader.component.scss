@@ -16,19 +16,20 @@
 .loader img {
   height: 300px;
   position: relative;
-  top: 72%;
+  top: 58%;
   animation: moveLoader 5s ease-in-out infinite;
   left: -60%;
 }
 
-// @keyframes moveLoader {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(100vw);
-//   }
-// }
+@keyframes moveLoader {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
 
 
 .linecabel {
@@ -55,14 +56,19 @@
   position: relative;
 }
 
-@media (max-width: 767px){
-  .boardImg{
+@media (max-width: 767px) {
+  .boardImg {
     display: none;
   }
-  .linecabel{
+
+  .linecabel {
     height: 14px;
     position: relative;
     left: -1%;
     top: -3%;
-}
+  }
+
+  .loader img {
+    top: 54%;
+  }
 }
