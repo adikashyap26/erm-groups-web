@@ -35,7 +35,6 @@ export class AwardListComponent {
   onLoadAwardCategory(){
     this.http.get(this.awardcategoryUrl).subscribe(response => {
       this.awardCatgoryData = response;
-      console.log(this.awardCatgoryData)
       if(this.awardCatgoryData && this.awardCatgoryData.length > 0){
         this.onClickAwardYear(this.awardCatgoryData[0]._id)
       }
@@ -46,9 +45,7 @@ export class AwardListComponent {
     this.selectedYear = id
     this.http.get(this.awardListUrl).subscribe(response => {
       this.awardListData = response;
-      console.log(this.awardListData);
-      this.filterAwardData = this.awardListData.filter((p: any) => p.yearId === id)
-      console.log(this.filterAwardData)
+      this.filterAwardData = this.awardListData.filter((p: any) => p.yearId === id);
     })
   }
 }

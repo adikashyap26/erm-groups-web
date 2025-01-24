@@ -41,7 +41,6 @@ export class CompanyItemComponent {
     let urlData = this.companyInnerUrl + '/' + url
     this.http.get(urlData).subscribe((response) => {
       this.data = response;
-      console.log(this.data)
     })
   }
 }

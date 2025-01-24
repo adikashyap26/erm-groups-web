@@ -39,7 +39,6 @@ export class MiningOverviewComponent {
   onLoadMininglist() {
     this.http.get(this.miningInnerUrl).subscribe(response => {
       this.miningListData = response;
-      console.log(this.miningListData)
     })
   }
 

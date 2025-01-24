@@ -19,7 +19,6 @@ bannerUrl = '/api/ourTeam/ourTeamBanner'
   ngOnInit(){
     this.http.get(this.bannerUrl).subscribe(response => {
       this.bannerData = response;
-      console.log(this.bannerData)
     })
   }
 }

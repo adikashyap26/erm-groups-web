@@ -61,7 +61,6 @@ export class GalleryComponent {
       (response:any) => {
         this.galleryData = response.data;
         this.filterGallery = response.data;
-        console.log(this.galleryData)
       },
       (error) => {
         this.galleryData = null;

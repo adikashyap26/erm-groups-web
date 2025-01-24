@@ -19,7 +19,6 @@ export class OurEthicsComponent {
   ngOnInit(){
     this.http.get(this.ethicsUrl).subscribe(response => {
       this.ethicsData = response;
-      console.log(this.ethicsData)
     })
   }
 

@@ -30,14 +30,12 @@ export class CsrWorkAreasComponent {
   onLoadWorkArea() {
     this.http.get(this.csrworkUrl).subscribe(response => {
       this.csrworkData = response;
-      console.log(this.csrworkData)
     })
   }
 
   onLoadWorkCategory() {
     this.http.get(this.workCategoryUrl).subscribe(response => {
       this.workCategoryData = response;
-      console.log(this.workCategoryData);
       if (this.workCategoryData.length > 0) {
         this.selectedCategoryIndex = 0;
         this.onClickCategory(this.workCategoryData[0]._id, 0);

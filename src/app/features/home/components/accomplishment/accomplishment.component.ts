@@ -19,7 +19,6 @@ export class AccomplishmentComponent {
   ngOnInit() {
     this.http.get(this.dataUrl).subscribe(response => {
       this.accomplishment = response;
-      console.log(this.accomplishment)
     })
   }
 

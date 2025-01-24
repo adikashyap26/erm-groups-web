@@ -25,13 +25,11 @@ export class BusinessHighlightsComponent {
   onLoadBusiness() {
     this.http.get(this.historyUrl).subscribe(response => {
       this.historyData = response;
-      console.log(this.historyData)
     })
   }
   onLoadBusinessHighlights() {
     this.http.get(this.businessUrl).subscribe(response => {
       this.businessData = response;
-      console.log(this.businessData)
     })
   }
 

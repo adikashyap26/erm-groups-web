@@ -23,7 +23,6 @@ export class CompanyItemBannerComponent {
   constructor(private activateRoute: ActivatedRoute, private http: HttpClient){}
 
   ngOnInit(){
-    console.log(this.urlId)
   }
 
 }

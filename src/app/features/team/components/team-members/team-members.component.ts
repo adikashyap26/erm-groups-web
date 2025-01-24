@@ -31,13 +31,11 @@ export class TeamMembersComponent {
   onLoadMembersData(){
     this.http.get(this.membersUrl).subscribe(response => {
       this.membersData = response;
-      console.log(this.membersData)
     })
   }
 
   onClickMember(id: any){
     this.selectedMember = this.membersData.find((p: any) => p._id == id)
-    console.log(this.selectedMember)
   }
   closePopup() {
     this.selectedMember = null;

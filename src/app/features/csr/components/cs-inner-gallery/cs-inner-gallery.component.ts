@@ -59,7 +59,6 @@ export class CsInnerGalleryComponent {
       (response:any) => {
         this.galleryData = response;
           this.filterGallery = this.galleryData.filter((p: any) => p.csrListId === url);
-        console.log(this.filterGallery)
       },
       (error) => {
         this.galleryData = null;

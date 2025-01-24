@@ -21,9 +21,7 @@ export class ContactFormComponent {
   constructor(private formBuilder: FormBuilder, private http: HttpService, private snackbar: MatSnackBar) { }
 
   ngOnInit() {
-    console.log('Component initialized'); // Debugging
     this.buildForm();
-    console.log(this.contactForm);
   }
 
   buildForm() {
