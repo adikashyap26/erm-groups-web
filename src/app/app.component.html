@@ -1,4 +1,7 @@
 <div class="component-wrapper">
+  <div>
+    <app-loader></app-loader>
+  </div>
   <app-header></app-header>
   <router-outlet></router-outlet>
   <app-call-to-action></app-call-to-action>
@@ -6,9 +9,9 @@
 </div>
 
 
-<div class="overlay" (click)="responsiveService.openResponsive()"  *ngIf="responsiveService.isResponsiveOpen | async"></div>
-
-<div class="nav" *ngIf="responsiveService.isResponsiveOpen | async">
-    <app-responsive-header></app-responsive-header>
+<div class="overlay" (click)="responsiveService.openResponsive()" *ngIf="responsiveService.isResponsiveOpen | async">
 </div>
 
+<div class="nav" *ngIf="responsiveService.isResponsiveOpen | async">
+  <app-responsive-header></app-responsive-header>
+</div>
