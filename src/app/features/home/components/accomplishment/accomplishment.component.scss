@@ -20,6 +20,9 @@ h1 {
     width: 45%;
     padding: 5% 3%;
 }
+.main-img{
+    height: 100%;
+}
 
 .accomplishment-container ::ng-deep .slick-dots {
     text-align: left;
@@ -27,20 +30,11 @@ h1 {
     bottom: 10px;
 }
 
-.union-img {
-    position: relative;
-}
-
 .text {
-    position: absolute;
     width: 300px;
-    top: 35%;
 }
 
 @media (max-width: 991px) {
-    .union-img {
-        display: none;
-    }
 
     .accomplishment {
         flex-direction: column-reverse;
@@ -73,9 +67,5 @@ h1 {
 @media (min-width:992px) and (max-width: 1200px) {
     .text {
         width: 260px;
-    }
-
-    .union-img {
-        display: none;
     }
 }
