@@ -1,17 +1,68 @@
 .loader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFff !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.loader img {
+  height: 300px;
+  position: relative;
+  top: 56%;
+  animation: moveLoader 5s ease-in-out infinite;
+  left: -60%;
+}
+
+@keyframes moveLoader {
+  0% {
+    transform: translateX(0);
   }
-  
-  .loader img {
-    width: 100%;
-    height: auto;
+  100% {
+    transform: translateX(100vw);
   }
+}
+
+
+.linecabel {
+  height: 14px;
+  position: relative;
+  left: -1%;
+  top: -98%;
+}
+
+
+.mining {
+  background-color: #70543E;
+  width: 100%;
+  height: 45%;
+  position: relative;
+  top: 18%;
+}
+
+.boardImg {
+  width: 100%;
+  height: 96%;
+  left: -40%;
+  top: -92%;
+  position: relative;
+}
+
+@media (max-width: 767px){
+  .boardImg{
+    display: none;
+  }
+  .linecabel[_ngcontent-ng-c384133660] {
+    height: 14px;
+    position: relative;
+    left: -1%;
+    top: -3%;
+}
+}

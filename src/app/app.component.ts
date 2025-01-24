@@ -21,7 +21,7 @@ import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationErr
 })
 export class AppComponent {
   title = 'web';
-  private minDisplayTime = 3000;
+  private minDisplayTime = 2000;
   constructor(public responsiveService: ResponsiveService,private router: Router, private loaderService: LoaderService) {}
 
 
