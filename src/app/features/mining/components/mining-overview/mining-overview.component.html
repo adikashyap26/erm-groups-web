@@ -16,17 +16,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="reports mb-4" *ngIf="reportsData">
+                <div class="reports mb-4">
                     <h4>Reports</h4>
                     <hr>
-                    <div *ngFor="let item of reportsData; let i=index;">
-                        <div class="d-flex align-item-end">
-                            <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
-                            <span class="mt-2">&DownArrowBar;</span>
-                        </div>
-                        <p>{{item.year}}</p>
-                        <hr>
-                    </div>
+                    <ng-container *ngIf="reportsData; else nodatafound">
+                        <ng-container *ngFor="let item of reportsData">
+                            <div class="d-flex align-item-end">
+                                <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
+                                <span class="mt-2">&DownArrowBar;</span>
+                            </div>
+                            <p>{{item.year}}</p>
+                            <hr>
+                        </ng-container>
+
+                    </ng-container>
+                    <ng-template #nodatafound>
+                        <p> No Reports Found</p>
+                    </ng-template>
+
                     <div class="text-center">
                         <h6>View More Reports</h6>
                     </div>

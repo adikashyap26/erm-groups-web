@@ -1,34 +1,45 @@
-.brand-img-container{
+.brand-img-container {
     background-image: url("/images/home/home_page_brand.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
-.brand-row{
+
+.brand-row {
     width: 90%;
     margin: 0 auto;
 }
-.brand-content{
+
+.brand-content {
     background-color: rgba(255, 255, 255, 0.65);
     padding: 0 5%;
 }
-.brand-color{
+
+.brand-color {
     color: var(--erm-secondary-color-shade2);
 }
-h3{
+
+h3 {
     color: var(--erm-primary-color-shade1);
 }
-button{
-    background: linear-gradient(to right, #ED3237, #FF5B5B,);
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    background: linear-gradient(to right, #ED3237, #FF5B5B, );
     color: var(--erm--neutral-font-color1);
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
 }
-.arrow-img{
+
+.arrow-img {
     height: 14px;
     padding-bottom: 3px;
 }
-.turbo-img{
+
+.turbo-img {
     width: 80%;
 }

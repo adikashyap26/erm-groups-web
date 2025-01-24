@@ -4,7 +4,7 @@
             <img src="images/logo.svg" class="logo" alt="logo">
         </a>
         <a (click)="sidenavService.closeResponsive()">
-            <img src="assets/images/cross.svg" class="cross">
+            <img src="images/icons/cross.svg" class="cross">
         </a>
     </div>
     <header>
@@ -17,7 +17,7 @@
                             About Us
                         </a>
                         <img (click)="toggleAboutUsDropdown()" [class.rotate]="isAboutUsOpen" class="chevron-img ms-4"
-                            src="assets/images/down-arrow.svg" alt="">
+                            src="images/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="isAboutUsOpen" class="dropdown">
                         <li><a (click)="sidenavService.closeResponsive()" routerLink="./history-milestone">Our History
@@ -34,7 +34,7 @@
                             Mining
                         </a>
                         <img (click)="toggleMiningDropdown()" [class.rotate]="isMiningUsOpen" class="chevron-img ms-4"
-                            src="assets/images/down-arrow.svg" alt="">
+                            src="images/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="isMiningUsOpen" class="dropdown">
                         <li *ngFor="let data of miningData">
@@ -48,7 +48,7 @@
                     <div class="flexes">
                         <a (click)="sidenavService.closeResponsive()" routerLink="./companies">Companies</a>
                         <img (click)="toggleCompaniesDropdown()" [class.rotate]="isCompaniesUsOpen"
-                            class="chevron-img ms-4" src="assets/images/down-arrow.svg" alt="">
+                            class="chevron-img ms-4" src="images/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="isCompaniesUsOpen" class="dropdown">
                         <li *ngFor="let data of companyData">
@@ -68,7 +68,7 @@
                         CSR
                         
                     </a>
-                    <img (click)="toggleCsrDropdown()" [class.rotate]="isCsrOpen" class="chevron-img ms-4" src="assets/images/down-arrow.svg"
+                    <img (click)="toggleCsrDropdown()" [class.rotate]="isCsrOpen" class="chevron-img ms-4" src="images/icons/down-arrow.svg"
                             alt="">
                 </div>
                     <ul *ngIf="isCsrOpen" class="dropdown">

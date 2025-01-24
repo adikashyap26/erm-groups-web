@@ -37,10 +37,7 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/slick-carousel/slick/slick.css",
-              "node_modules/slick-carousel/slick/slick-theme.css",
-              "node_modules/lightgallery/css/lightgallery.css",
-              "node_modules/lightgallery/css/lg-thumbnail.css",
-              "node_modules/lightgallery/css/lg-zoom.css"
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

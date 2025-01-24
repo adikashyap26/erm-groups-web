@@ -14,24 +14,27 @@ export class MiningOverviewComponent {
   @Input() urlId: any;
   miningInnerUrl = '/api/mining/miningCategory';
   miningListData: any;
-  reportsUrl = '/api/mining/miningReports';
+  reportsUrl = '/api/mining/miningReportsByMiningUrl';
   reportsData: any;
   reportPdf: any;
   pdfData: any;
   activeUrl: string | null = null;
+  filterReportData: any;
+  activeMiningUrl: any;
 
   constructor(private http: HttpService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.onLoadMininglist();
-    this.onLoadReports();
-    if(this.urlId){
+
+    if (this.urlId) {
       this.activeUrl = this.urlId[0].miningUrlId;
     }
     this.activateRoute.paramMap.subscribe((paramMap) => {
-      const activeMiningUrl = paramMap.get('url');
-      if (activeMiningUrl) {
-        this.activeUrl = activeMiningUrl; 
+      this.activeMiningUrl = paramMap.get('url');
+      this.onLoadReports(this.activeMiningUrl);
+      if (this.activeMiningUrl) {
+        this.activeUrl = this.activeMiningUrl;
       }
     });
   }
@@ -42,9 +45,12 @@ export class MiningOverviewComponent {
     })
   }
 
-  onLoadReports() {
-    this.http.get(this.reportsUrl).subscribe(response => {
+  onLoadReports(url: any) {
+    let urlId = this.reportsUrl + '/' + url;
+    this.http.get(urlId).subscribe(response => {
       this.reportsData = response;
+      console.log(this.reportsData)
+
     })
   }
 
