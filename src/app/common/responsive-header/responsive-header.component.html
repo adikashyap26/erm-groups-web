@@ -1,0 +1,84 @@
+<section>
+    <div class="navheader">
+        <a (click)="sidenavService.closeResponsive()">
+            <img src="images/logo.svg" class="logo" alt="logo">
+        </a>
+        <a (click)="sidenavService.closeResponsive()">
+            <img src="assets/images/cross.svg" class="cross">
+        </a>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <!-- About Us Dropdown -->
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a routerLink="./aboutus" (click)="sidenavService.closeResponsive()">
+                            About Us
+                        </a>
+                        <img (click)="toggleAboutUsDropdown()" [class.rotate]="isAboutUsOpen" class="chevron-img ms-4"
+                            src="assets/images/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isAboutUsOpen" class="dropdown">
+                        <li><a (click)="sidenavService.closeResponsive()" routerLink="./history-milestone">Our History
+                                and Milestones</a></li>
+                        <!-- <li><a (click)="sidenavService.closeResponsive()">Our Team</a></li> -->
+                        <li><a (click)="sidenavService.closeResponsive()"  routerLink="./career">Careers</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mining Dropdown -->
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a routerLink="./mining" (click)="sidenavService.closeResponsive()">
+                            Mining
+                        </a>
+                        <img (click)="toggleMiningDropdown()" [class.rotate]="isMiningUsOpen" class="chevron-img ms-4"
+                            src="assets/images/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isMiningUsOpen" class="dropdown">
+                        <li *ngFor="let data of miningData">
+                            <a [routerLink]="['/mining', data?.url || '']" (click)="sidenavService.closeResponsive()">{{ data?.name || 'Unnamed' }}</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()" routerLink="./companies">Companies</a>
+                        <img (click)="toggleCompaniesDropdown()" [class.rotate]="isCompaniesUsOpen"
+                            class="chevron-img ms-4" src="assets/images/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isCompaniesUsOpen" class="dropdown">
+                        <li *ngFor="let data of companyData">
+                            <a [routerLink]="['/companies', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.name || 'Unnamed' }}</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-item">
+                    <a (click)="sidenavService.closeResponsive()"  routerLink="./awards">Awards</a>
+                </li>
+                <li class="menu-item">
+                    <div class="flexes">
+                    <a (click)="sidenavService.closeResponsive()" routerLink="./csr">
+                        CSR
+                        
+                    </a>
+                    <img (click)="toggleCsrDropdown()" [class.rotate]="isCsrOpen" class="chevron-img ms-4" src="assets/images/down-arrow.svg"
+                            alt="">
+                </div>
+                    <ul *ngIf="isCsrOpen" class="dropdown">
+                        <li><a (click)="sidenavService.closeResponsive()"  routerLink="./reports">Reports</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a (click)="sidenavService.closeResponsive()"  routerLink="./contact-us">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</section>

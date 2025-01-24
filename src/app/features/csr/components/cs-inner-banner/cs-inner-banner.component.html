@@ -16,7 +16,7 @@
 
 <div class="main-container text-white position-relative" *ngIf="filterBanner">
     <div class="overlay"></div>
-    <img class="img-fluid w-100" src="https://erm-backend-deploy-production.up.railway.app/{{filterBanner.thumbnail}}" alt="">
+    <img class="img-fluid w-100" loading="lazy"  src="https://erm-backend-deploy-production.up.railway.app/{{filterBanner.thumbnail}}" alt="">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-6 col-sm-12 col-md-8 text-content position-absolute">

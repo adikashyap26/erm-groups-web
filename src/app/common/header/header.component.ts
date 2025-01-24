@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { HttpService } from '../../service/http.service';
 import { map } from 'rxjs';
+import { ResponsiveService } from '../../service/responsive.service';
 
 @Component({
   selector: 'app-header',
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
   isDropdownOpen: boolean = true;
 
 
-  constructor(private router: Router, private http: HttpService) { }
+  constructor(private responsiveService: ResponsiveService,private router: Router, private http: HttpService) { }
 
   ngOnInit() {
     this.onLoadMining();
@@ -61,4 +62,13 @@ export class HeaderComponent implements OnInit {
   openDropdown(): void {
     this.isDropdownOpen = true;
   }
+
+  openSidenav() {
+    this.responsiveService.openResponsive();
+  }
+
+  home(){
+
+  }
+  
 }

@@ -43,6 +43,7 @@ export class GalleryComponent {
 
   closeLightbox() {
     this.isLightboxOpen = false;
+      document.body.style.overflowY = 'auto'
   }
 
 
@@ -50,6 +51,7 @@ export class GalleryComponent {
     this.isLightboxOpen = true;
     this.currentIndex = index;
     this.currentImage = 'https://erm-backend-deploy-production.up.railway.app/' + this.filterGallery[index].thumbnail;
+    document.body.style.overflowY = 'hidden';
   }
 
 

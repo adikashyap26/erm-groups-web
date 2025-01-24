@@ -19,6 +19,12 @@ h1 {
     align-items: center;
 }
 
+img {
+    width: 100%;
+    min-height: 120px;
+}
+
+
 .breadcrumbs {
     position: absolute;
     bottom: 0;
@@ -37,5 +43,15 @@ h1 {
 
     li {
         color: var(--erm-secondary-color-shade3);
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .breadcrumbs {
+        bottom: -15px;
     }
 }

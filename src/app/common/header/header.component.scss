@@ -1,6 +1,5 @@
 header {
     padding: 0px 35px;
-
 }
 
 .main-nav {
@@ -15,7 +14,6 @@ ul {
     margin-bottom: 0;
     list-style: none;
     padding: 0;
-    // display: none;
 }
 
 li {
@@ -28,10 +26,12 @@ li a {
     text-decoration: none;
     color: black;
 }
-li:hover .chevron-img{
+
+li:hover .chevron-img {
     transform: rotate(180deg);
 }
-.chevron-img{
+
+.chevron-img {
     height: 10px;
     transition: transform .3 ease-in-out;
 }
@@ -66,4 +66,40 @@ li:hover .dropdown {
 
 .social-icons img {
     cursor: pointer;
+}
+
+
+.menu {
+    display: none; 
+}
+
+.res {
+    display: none; 
+}
+
+@media (max-width: 991px) {
+    .main-nav {
+        display: none;
+    }
+
+    .res {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 5px 0;
+
+        .logo{
+            height: 50px;
+        }
+    }
+
+    .menu {
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+
+        img{
+            width: 20px;
+        }
+    }
 }

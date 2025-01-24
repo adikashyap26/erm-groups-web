@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef,SimpleChanges, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
 import { ActivatedRoute } from '@angular/router';
 import lightGallery from 'lightgallery';
@@ -20,52 +20,65 @@ export class CsInnerGalleryComponent {
   dataId: any;
   galleryData: any;
   filterGallery: any;
-
-  settings = {
-      counter: true,
-      download: false,
-      plugins: [lgThumbnail]
-    }
-    private galleryInitialized = false; 
+  isLightboxOpen = false;
+  currentImage = '';
+  currentIndex = 0;
 
   constructor(private http: HttpService, private activateRoute: ActivatedRoute, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {
       this.dataId = param.get('url')
-      this.onLoadGallery(param.get('url'));
+      this.loadGalleryData(param.get('url'));
     })
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      if (this.filterGallery && !this.galleryInitialized) {
-        this.initializeGallery();
+    ngOnChanges(changes: SimpleChanges) {
+      if (changes['url'] && this.dataId) {
+        this.loadGalleryData(this.dataId);
       }
-    }, 0);
-  }
-
-  onLoadGallery(url: any) {
-    this.http.get(this.csrGalleryUrl).subscribe(response => {
-      this.crGalleryData = response;
-      console.log(this.crGalleryData)
-      this.filterGallery = this.crGalleryData.filter((p: any) => p.csrListId === url);
-      console.log(this.filterGallery)
-      this.cdr.detectChanges()
-      if (this.filterGallery && !this.galleryInitialized) {
-        this.initializeGallery();
-      }
-    })
-  }
-
-  initializeGallery() {
-    if (typeof window !== 'undefined' && this.galleryContainer?.nativeElement) {
-      lightGallery(this.galleryContainer.nativeElement, {
-        selector: '.gallery-item',
-        plugins: [lgThumbnail],
-        speed: 500,
-      });
-      this.galleryInitialized = true; 
     }
+
+  closeLightbox() {
+    this.isLightboxOpen = false;
+      document.body.style.overflowY = 'auto'
   }
+
+
+  openLightbox(index: number) {
+    this.isLightboxOpen = true;
+    this.currentIndex = index;
+    this.currentImage = 'https://erm-backend-deploy-production.up.railway.app/' + this.filterGallery[index].thumbnail;
+    document.body.style.overflowY = 'hidden';
+  }
+
+
+
+  loadGalleryData(url: any) {
+    this.http.get(this.csrGalleryUrl).subscribe(
+      (response:any) => {
+        this.galleryData = response;
+          this.filterGallery = this.galleryData.filter((p: any) => p.csrListId === url);
+        console.log(this.filterGallery)
+      },
+      (error) => {
+        this.galleryData = null;
+      }
+    );
+  }
+
+  prevImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex =
+      (this.currentIndex - 1 + this.filterGallery.length) %
+      this.filterGallery.length;
+      this.currentImage =  'https://erm-backend-deploy-production.up.railway.app/' +  this.filterGallery[this.currentIndex].thumbnail;
+  }
+
+  nextImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex = (this.currentIndex + 1) % this.filterGallery.length;
+    this.currentImage ='https://erm-backend-deploy-production.up.railway.app/' +  this.filterGallery[this.currentIndex].thumbnail;
+  }
+
 }

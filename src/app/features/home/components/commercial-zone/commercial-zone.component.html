@@ -1,52 +1,37 @@
 <div class="main-container">
-  <div class="container">
-      <div class="row">
-          <h2>ERM Commercial<br> Zone</h2>
-          <mat-tab-group (selectedTabChange)="onTabChange($event)">
-              <mat-tab *ngFor="let tab of data" [label]="tab.title">
-                  <ng-container *ngIf="loading; else loadedData">
-                      <div class="loading-message">
-                          <p>Loading...</p>
-                      </div>
-                  </ng-container>
+    <div class="container">
+        <div class="row">
+            <div class="heading">
+                <h2>ERM Commercial<br> Zone</h2>
+                <div class="category-container">
+                    <div *ngFor="let tab of mainTab"
+                         [ngClass]="{'selected': selectedCategoryId === tab._id}"
+                         (click)="onClickMainTab(tab._id)">
+                        {{ tab.title }}
+                    </div>
+                    
+                </div>
+            </div>
 
-                  <ng-template #loadedData>
-                      <ng-container *ngIf="subData && subData.length > 0; else noDataTemplate">
-                          <ngx-slick-carousel class="carousel" [config]="slideConfig">
-                              <div ngxSlickItem *ngFor="let item of subData" class="slide">
-                                  <div>
-                                      <h4>{{ item.title }}</h4>
-                                      <img class="img-fluid infographic py-3" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnilTwo}}" alt="">
-                                      <h3>{{item.sub_title}}</h3>
-                                      <p>{{ item.sub_description }}</p>
-                                      <h5><span>{{item.buttons}} &rarr;</span></h5>
-                                  </div>
-                                  <div class="banner-carousel">
-                                      <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
-                                  </div>
-                              </div>
-                          </ngx-slick-carousel>
-                      </ng-container>
-
-                      <ng-template #noDataTemplate>
-                          <div class="no-data-message">
-                              <p>We will update soon.</p>
-                          </div>
-                      </ng-template>
-                  </ng-template>
-              </mat-tab>
-          </mat-tab-group>
-      </div>
-  </div>
+            <ng-container *ngIf="TabData && TabData.length > 0; else noData">
+                <div class="carousel">
+                  <div *ngFor="let item of TabData" class="slide">
+                    <div>
+                      <h4>{{ item.title }}</h4>
+                      <img class="img-fluid infographic py-3" src="https://erm-backend-deploy-production.up.railway.app/{{ item.thumbnilTwo }}" alt="">
+                      <h3>{{ item.sub_title }}</h3>
+                      <p>{{ item.sub_description }}</p>
+                      <h5><span>{{ item.buttons }} &rarr;</span></h5>
+                    </div>
+                    <div class="banner-carousel">
+                      <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{ item.thumbnail }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-template #noData>No data available for this category.</ng-template>
+              
+        </div>
+    </div>
 </div>
 
-
-
-
-<!-- <ngx-slick-carousel class="carousel" [config]="slideConfig">
-                          <div ngxSlickItem *ngFor="let item of carouselData.carousel" class="slide">
-                              <div class="banner-carousel">
-                                  <img class="img-fluid" src="{{item.img}}" alt="">
-                              </div>
-                          </div>
-                      </ngx-slick-carousel> -->
