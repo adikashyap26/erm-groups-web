@@ -1,4 +1,4 @@
-.home-working{
+.home-working {
     background-color: var(--erm-primary-color);
     color: var(--erm--neutral-font-color1);
     border-radius: 20px;
@@ -6,17 +6,48 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 55%;
+    padding: 5%;
 }
-h2{
+
+h2 {
     font-family: 'condensed' !important;
 }
-h1{
+
+h1 {
     font-size: 66px;
 }
-.gen-line{
+
+.gen-line {
     border-right: 1px solid var(--erm--neutral-font-color1);
     margin: 0 10px;
 }
-.content:hover h1{
+
+.content:hover h1 {
     color: var(--erm-secondary-color-shade1);
+}
+
+.reponsive-content {
+    display: none;
+}
+
+::ng-deep .reponsive-content .slick-active h1 {
+    color: var(--erm-secondary-color-shade1);
+}
+
+@media (max-width: 991px) {
+    .work-content {
+        display: none;
+    }
+
+    .reponsive-content {
+        display: block;
+    }
+
+    .home-working {
+        background-size: auto;
+    }
+
+    .img-home-working:nth-child(2) {
+        display: none;
+    }
 }

@@ -8,9 +8,9 @@
         <ngx-slick-carousel class="carousel" [config]="slideConfig">
             <div ngxSlickItem *ngFor="let item of responsibility" class="slide">
                 <div class="content">
-                    <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
+                    <img class="img-fluid main-img" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnail}}" alt="">
                     <div class="overlay">
-                        <div>
+                        <div class="overlay-img">
                             <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{item.thumbnilTwo}}" alt="">
                         </div>
                         <div>

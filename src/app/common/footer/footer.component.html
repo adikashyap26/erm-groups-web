@@ -16,14 +16,14 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12 pb-3">
+            <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12 pb-3 links">
                 <h4 class="mb-4">Quick Links</h4>
                 <a *ngFor="let ss of item.quick_link">
                     <p class="mb-2" (click)="onClicklinks(ss.url)">{{ss.title}}</p>
                 </a>
             </div>
 
-            <div class="col-lg-3 col-xl-3 col-md-4 col-sm-12 company">
+            <div class="col-lg-3 col-xl-3 col-md-4 col-sm-12 company links">
                 <h4 class="mb-4">Our Companies</h4>
                 <div *ngFor="let comp of item.our_companies">
                     <p class="mb-2" (click)="onClickCompany(comp.url)">{{comp.title}}</p>

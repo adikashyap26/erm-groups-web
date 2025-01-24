@@ -2,7 +2,7 @@
     <div class="banner-container">
         <ngx-slick-carousel class="carousel" [config]="slideConfig">
             <div ngxSlickItem *ngFor="let item of bannerData" class="slide"  [ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/' + item.thumbnail + ')',
-            'background-size': 'cover', 'height': '90vh'}">
+            'background-size': 'cover'}">
                 <div class="banner-carousel">
                     <div class="content">
                         <h1 class="mb-3">{{item.banner_title}}</h1>

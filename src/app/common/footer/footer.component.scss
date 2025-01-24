@@ -1,20 +1,27 @@
-footer{
+footer {
     background-color: var(--erm--neutral-font-color2);
     color: var(--erm--neutral-font-color1);
 }
-hr{
+
+hr {
     border-bottom: 1px solid var(--erm--neutral-font-color1);
     opacity: 1;
 }
-h4{
+
+h4 {
     font-weight: 600;
 }
-a{
+
+a {
     cursor: pointer;
     text-decoration: none;
     color: #fff;
 }
 
-.social-media-container img{
+.links p {
+    cursor: pointer;
+}
+
+.social-media-container img {
     height: 30px;
 }

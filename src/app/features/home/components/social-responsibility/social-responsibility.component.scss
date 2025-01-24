@@ -15,6 +15,9 @@ h2 {
     transform: scale(.85);
     border-radius: 20px;
 }
+.main-img{
+    width: 100%;
+}
 
 .slide {
     margin: 10px 5px;
@@ -42,18 +45,21 @@ h2 {
     opacity: 0; 
     transition: opacity 0.3s ease-in-out; 
 }
+.overlay-img{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5% 5% 0 0;
+    img{
+        height: 65px;
+    }
+}
 
 .slick-center .overlay{
     opacity: 1;
 }
 h3{
     font-weight: 600;
-}
-
-.overlay img {
-    max-width: 80%;
-    margin-top: 20px;
-    margin-left: 270px;
 }
 
 .overlay h3 {
@@ -63,4 +69,10 @@ h3{
 .overlay p {
     margin-top: -10px !important; 
     cursor: pointer;
+}
+
+@media (max-width: 767px){
+    .overlay-img img{
+        height: 50px;
+    }
 }

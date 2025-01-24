@@ -5,15 +5,22 @@
 h3 {
     width: 70%;
     margin-bottom: 6%;
+    font-weight: 600 !important;
 }
 
 .content {
-    padding-left: 5%;
     background-image: url('/images/illustrations/Illustration4.svg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    // back
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+h3,
+.button {
+    margin-left: 5%;
 }
 
 button {
@@ -23,6 +30,7 @@ button {
     border-radius: 8px;
     padding: 8px 20px;
 }
+
 .image-container {
     position: relative;
     overflow: hidden;
@@ -33,7 +41,9 @@ button {
     display: block;
     width: 100%;
     position: relative;
-    z-index: 1; /* Image is below the marquee stripe */
+    z-index: 1;
+    height: 100%;
+    /* Image is below the marquee stripe */
 }
 
 .maquee-container {
@@ -58,14 +68,33 @@ button {
     white-space: nowrap;
     color: var(--erm--neutral-font-color1);
     font-weight: bold;
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 14px;
+    /* Adjust font size as needed */
 }
 
 @keyframes diagonal-marquee {
     from {
         transform: translateX(-100%);
     }
+
     to {
         transform: translateX(100%);
+    }
+}
+
+@media (max-width: 767px) {
+    .image-container {
+        display: none;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3 {
+        width: auto;
+        font-weight: 500 !important;
     }
 }
