@@ -72,7 +72,14 @@ button.next {
 
 @media (max-width: 767px){
     .gallery-thumbnail {
-    width: 100%;
+        width: 100%;
     }
-    
+
+    .lightbox-image{
+        width: 70vw;
+        height: auto;
+        margin: auto;
+        display: block;
+        border-radius: 60px;
+    }
 }
