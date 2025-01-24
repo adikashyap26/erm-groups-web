@@ -16,19 +16,19 @@
 .loader img {
   height: 300px;
   position: relative;
-  top: 56%;
+  top: 72%;
   animation: moveLoader 5s ease-in-out infinite;
   left: -60%;
 }
 
-@keyframes moveLoader {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-}
+// @keyframes moveLoader {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(100vw);
+//   }
+// }
 
 
 .linecabel {
@@ -59,7 +59,7 @@
   .boardImg{
     display: none;
   }
-  .linecabel[_ngcontent-ng-c384133660] {
+  .linecabel{
     height: 14px;
     position: relative;
     left: -1%;
