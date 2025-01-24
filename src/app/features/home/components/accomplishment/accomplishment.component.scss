@@ -72,10 +72,18 @@ h1 {
 
 @media (min-width:992px) and (max-width: 1200px) {
     .text {
-        width: 260px;
+        width: 230px;
     }
 
     .union-img {
         display: none;
+    }
+
+    h1{
+        font-size: 35px;
+    }
+
+    h4{
+        font-size: 35px;
     }
 }
