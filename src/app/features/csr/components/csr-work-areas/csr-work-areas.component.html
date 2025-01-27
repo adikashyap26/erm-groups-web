@@ -4,7 +4,7 @@
             <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5 text-white">
                 <h2 class="mb-5">{{csrworkData[0].title}}</h2>
                 <div class="workcategory" *ngFor="let item of workCategoryData; let idx=index;">
-                    <p (click)="onClickCategory(item._id, idx)" [class.active]="idx === selectedCategoryIndex">
+                    <p (click)="onClickCategory(item.url, idx)" [class.active]="idx === selectedCategoryIndex">
                         {{item.title | titlecase}}</p>
                 </div>
                 <p class="mt-5">{{csrworkData[0].description}}</p>

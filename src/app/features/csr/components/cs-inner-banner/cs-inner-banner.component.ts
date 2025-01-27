@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpService } from '../../../../service/http.service';
-import { NgIf } from '@angular/common';
+import { NgIf, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-cs-inner-banner',
   standalone: true,
-  imports: [NgIf, RouterModule],
+  imports: [NgIf, RouterModule, TitleCasePipe],
   templateUrl: './cs-inner-banner.component.html',
   styleUrl: './cs-inner-banner.component.scss'
 })
@@ -19,12 +19,13 @@ export class CsInnerBannerComponent {
   dataId: any;
   filterBanner: any;
   filterTitle: any;
-
+  categoryName:any;
   constructor(private activateRoute: ActivatedRoute, private http: HttpService) { }
 
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {
-      this.dataId = param.get('url')
+      this.dataId = param.get('url');
+      this.categoryName = param.get('categoryName');
       this.onLoadTitle(param.get('url'));
       this.onLoadBanner(param.get('url'));
     })

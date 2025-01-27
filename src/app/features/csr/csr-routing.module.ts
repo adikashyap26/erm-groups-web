@@ -9,7 +9,7 @@ const routes: Routes = [
     component: CsrComponent
   },
   {
-    path: ':url',
+    path: ':categoryName/:url',
     component: CsrInnerMainComponent
   }
 ];
