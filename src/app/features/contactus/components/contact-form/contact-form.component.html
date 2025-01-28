@@ -89,20 +89,7 @@
                         </div>
                     </div>
 
-                    <!-- Option Dropdown -->
-                    <div class="form-value">
-                        <select name="option" id="option" formControlName="option"
-                            [class.invalid]="contactForm.get('option')?.invalid && contactForm.get('option')?.touched">
-                            <option value="" disabled selected>Choose Your Option</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <small *ngIf="contactForm.get('option')?.invalid && contactForm.get('option')?.touched">
-                            Please select an option.
-                        </small>
-                    </div>
-
+        
                     <!-- Message Textarea -->
                     <div class="form-value">
                         <textarea name="message" formControlName="message" id="message" rows="4"

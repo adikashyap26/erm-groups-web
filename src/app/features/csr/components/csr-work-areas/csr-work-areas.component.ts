@@ -68,7 +68,7 @@ export class CsrWorkAreasComponent {
 
   onClickCsrcatgory(url: any){
     if(this.categoryName){
-      this.router.navigate(['csr', this.categoryName, url]);
+      this.router.navigate(['csr', url]);
       window.scrollTo(0,0);
     }
 

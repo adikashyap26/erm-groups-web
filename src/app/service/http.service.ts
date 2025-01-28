@@ -20,5 +20,4 @@ export class HttpService {
     return this.http.post(this.baseUrl + url, data)
   }
 
-
 }

@@ -30,7 +30,6 @@ export class ContactFormComponent {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]], // Ensure phone is 10 digits
       pincode: ['', Validators.required],
-      option: ['', Validators.required],
       message: ['', Validators.required]
     });
   }

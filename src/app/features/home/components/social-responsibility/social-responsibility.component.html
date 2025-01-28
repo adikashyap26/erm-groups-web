@@ -16,10 +16,9 @@
                         <div>
                             <h3>{{item.title}}</h3>
                         </div>
-                        <div>
-                            <p>{{item.button}} &nbsp;&rarr;</p>
+                        <div class="itemLink">
+                            <a (click)="onClickRoutes(item.link)">{{ item.button }} &nbsp;&rarr;</a>
                         </div>
-                       
                     </div>
                 </div>
             </div>

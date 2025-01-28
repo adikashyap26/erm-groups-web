@@ -66,13 +66,19 @@ h3{
     margin-bottom: 0;
 }
 
-.overlay p {
-    margin-top: -10px !important; 
-    cursor: pointer;
-}
 
 @media (max-width: 767px){
     .overlay-img img{
         height: 50px;
     }
+}
+
+
+
+.itemLink a {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    top: -30px;
 }

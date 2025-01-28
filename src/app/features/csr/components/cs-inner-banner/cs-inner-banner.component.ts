@@ -25,7 +25,6 @@ export class CsInnerBannerComponent {
   ngOnInit() {
     this.activateRoute.paramMap.subscribe((param) => {
       this.dataId = param.get('url');
-      this.categoryName = param.get('categoryName');
       this.onLoadTitle(param.get('url'));
       this.onLoadBanner(param.get('url'));
     })

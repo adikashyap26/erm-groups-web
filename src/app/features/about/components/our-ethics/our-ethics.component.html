@@ -34,7 +34,10 @@
                 <div class="about-subheading">
                     <h3>{{ethicsData[2].title}}</h3>
                     <div *ngFor="let item of ethicsData[2].lists">
-                        <p class=mb-1><span>{{item.list_title}}</span>{{item.list_description}}</p>
+                        <p class="mb-1">
+                            <span class="check-mark">✓</span>
+                            <span class="mt-2">{{item.list_title}}</span>{{item.list_description}}
+                        </p>
                     </div>
                 </div>
             </div>
