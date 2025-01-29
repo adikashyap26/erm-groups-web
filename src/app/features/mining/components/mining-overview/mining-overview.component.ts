@@ -47,11 +47,15 @@ export class MiningOverviewComponent {
 
   onLoadReports(url: any) {
     let urlId = this.reportsUrl + '/' + url;
-    this.http.get(urlId).subscribe(response => {
-      this.reportsData = response;
-      console.log(this.reportsData)
-
-    })
+    this.http.get(urlId).subscribe((response:any) => {
+      if (response && response.length > 0) {
+        // Sorting reports by year in descending order
+        this.reportsData = response.sort((a:any, b:any) => parseInt(b.year.split('-')[0]) - parseInt(a.year.split('-')[0]))[0];
+      } else {
+        this.reportsData = null;
+      }
+      console.log(this.reportsData);
+    });
   }
 
   onClickMine(url: string) {
