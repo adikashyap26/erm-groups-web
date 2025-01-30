@@ -47,8 +47,7 @@ p {
 
 .centerImage{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 
     img{
         border-radius: 20px;
