@@ -12,6 +12,9 @@ p {
     display: none;
 }
 
+hr{
+    margin: .5rem 0;
+}
 @media (max-width: 991px) {
     .reports {
         display: block;
@@ -42,5 +45,14 @@ p {
 @media (max-width: 767px) {
     .filterfeature {
         flex-direction: column-reverse;
+    }
+}
+
+.centerImage{
+    display: flex;
+    justify-content: flex-start;
+
+    img{
+        border-radius: 20px;
     }
 }

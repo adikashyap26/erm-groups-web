@@ -2,12 +2,14 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpService } from '../../../../service/http.service';
+import { RouterModule, Router } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-social-responsibility',
   standalone: true,
-  imports: [NgFor, SlickCarouselModule],
+  imports: [NgFor, SlickCarouselModule,RouterModule],
   templateUrl: './social-responsibility.component.html',
   styleUrl: './social-responsibility.component.scss'
 })
@@ -16,7 +18,7 @@ export class SocialResponsibilityComponent {
     dataUrl = '/api/home/corporateSocialResponsibility'
     responsibility: any;
   
-    constructor(private http: HttpService) { }
+    constructor(private http: HttpService, private routes: Router) { }
   
     ngOnInit() {
       this.http.get(this.dataUrl).subscribe(response => {
@@ -24,6 +26,11 @@ export class SocialResponsibilityComponent {
       })
     }
 
+
+    onClickRoutes(item:any){
+      this.routes.navigate([item]);
+      window.scrollTo(0, 0)
+    }
 
 
   slideConfig = {

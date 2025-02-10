@@ -2,20 +2,23 @@
     <div class="container">
         <div class="row">
             <h2 class="mb-4">{{messageData[0].section_title}}</h2>
-            <div class="col-lg-7 col-xl-7 col-md-7 col-sm-12">
+            <div class="col-lg-7 col-xl-7 col-md-12 col-sm-12">
                 <div class="d-flex">
-                    <img class="img-fluid chairman-img" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnail}}" alt="">
+                    <img class="img-fluid chairman-img"
+                        src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnail}}" alt="">
                     <div class="bg-message2">
-                        <div class="text-white bg-message pt-3 px-3" [ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/images/about/manufacture.png)'}"
-                        >
+                        <!-- [ngStyle]="{'background-image': 'url(https://erm-backend-deploy-production.up.railway.app/images/about/manufacture.png)'}" -->
+                        <div class="text-white bg-message pt-3 px-3">
                             <h3>{{messageData[0].chairman_name}}</h3>
                             <p class="mb-1">{{messageData[0].chairman_position}}</p>
                         </div>
-                        <img class="message-img2" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilThree}}" alt="">
+                        <img class="message-img2"
+                            src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilThree}}"
+                            alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-xl-5 col-md-5 col-sm-12">
+            <div class="col-lg-5 col-xl-5 col-md-12 col-sm-12">
                 <div class="d-flex align-items-start message-content p-3">
                     <img class="img-fluid apostrope-img" src="images/icons/Vector.svg" alt="">
                     <div class="ms-3 p-1">
@@ -24,7 +27,9 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <img class="img-fluid imag-mes" src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilFour}}" alt="">
+                    <img class="img-fluid imag-mes"
+                        src="https://erm-backend-deploy-production.up.railway.app/{{messageData[0].thumbnilFour}}"
+                        alt="">
                 </div>
             </div>
         </div>

@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
-  // baseUrl = 'http://localhost:3000'
-
   baseUrl = 'https://erm-backend-deploy-production.up.railway.app'
+
+  // baseUrl = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,5 @@ export class HttpService {
   post(url: string, data: any){
     return this.http.post(this.baseUrl + url, data)
   }
-
 
 }

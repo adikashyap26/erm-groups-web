@@ -4,7 +4,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel'
 import { NgFor, NgIf } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -14,14 +15,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NgFor,
     NgIf,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatIconModule
   ],
   exports: [
     SlickCarouselModule,
     NgFor,
     NgIf,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }

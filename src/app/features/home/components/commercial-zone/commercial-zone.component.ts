@@ -1,16 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { NgFor, NgIf } from '@angular/common';
-import { Component,ViewChild,ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpService } from '../../../../service/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 declare var bootstrap: any;
+
+
 @Component({
   selector: 'app-commercial-zone',
   standalone: true,
-  imports: [NgFor, NgIf, MatTabsModule, SlickCarouselModule, CommonModule],
+  imports: [NgFor, NgIf, MatTabsModule, SlickCarouselModule, CommonModule, RouterModule],
   templateUrl: './commercial-zone.component.html',
   styleUrls: ['./commercial-zone.component.scss']
 })
@@ -30,7 +33,7 @@ export class CommercialZoneComponent {
   currentIndex = 0; // Track the current slide
   selectedCategoryId: number | null = null;
 
-  constructor(private http: HttpService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
+  constructor(private router: Router, private http: HttpService, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
   @ViewChild('slickCarousel', { static: true }) slickCarousel!: ElementRef;
   ngOnInit() {
     this.onLoadMainCategory();
@@ -53,7 +56,7 @@ export class CommercialZoneComponent {
     const url = `${this.InnerUrl}/${id}`;
     this.http.get(url).subscribe(response => {
       this.TabData = response;
-      
+
       // Wait for the data to be updated before refreshing the carousel
       if (this.slickCarousel && this.slickCarousel.nativeElement) {
         // Refresh the slick carousel after data is loaded
@@ -72,11 +75,23 @@ export class CommercialZoneComponent {
     autoplaySpeed: 2000,
   };
 
-  configSlide={
+  configSlide = {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
     infinite: true
+  }
+
+
+  onClickRoutes(link: any) {
+    debugger;
+    const isExternalLink = link.startsWith('http://') || link.startsWith('https://');
+    if (isExternalLink) {
+      window.open(link, '_blank');
+    } else {
+      this.router.navigate([link]);
+    }
+    window.scrollTo(0, 0);
   }
 
 

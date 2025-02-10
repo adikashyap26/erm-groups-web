@@ -9,14 +9,32 @@
     display: flex; 
     
     div{
-        margin-right: 4%;
+        margin-right: 20px;
     }
 }
 
 
-@media (max-width: 500px){
+@media (max-width: 550px){
     .content{
         overflow-x: scroll;
         flex-direction: column;
     }
+}
+
+p{
+    color: var(--erm-accent-font-color); 
+}
+
+h2{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+h4{
+    font-family: 'condensed' !important;
+    color: var(--erm-tertiary-color);
+}
+
+.curve{
+    border-radius: 30px;
 }

@@ -1,3 +1,13 @@
 iframe{
     width: 100%;
 }
+@media (max-width: 767px) {
+    iframe {
+        height: 340px;
+    }
+}
+@media (min-width: 1500px) {
+    iframe {
+        height: 85vh;
+    }
+}

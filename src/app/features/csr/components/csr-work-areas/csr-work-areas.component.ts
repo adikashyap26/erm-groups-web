@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../../../service/http.service';
 import { NgClass, NgFor, NgIf, TitleCasePipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-csr-work-areas',
@@ -19,8 +19,10 @@ export class CsrWorkAreasComponent {
   categoryListData: any;
   filterCategoryData: any;
   selectedCategoryIndex: number = 0;
+  categoryName:any;
 
-  constructor(private http: HttpService, private router: Router) { }
+
+  constructor(private http: HttpService,private activateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.onLoadWorkArea();
@@ -38,19 +40,21 @@ export class CsrWorkAreasComponent {
       this.workCategoryData = response;
       if (this.workCategoryData.length > 0) {
         this.selectedCategoryIndex = 0;
-        this.onClickCategory(this.workCategoryData[0]._id, 0);
+        this.onClickCategory(this.workCategoryData[0].url, 0);
+
       }
     })
   }
 
   onClickCategory(id: any, index: number) {
+    this.categoryName = id;
     this.selectedCategoryIndex = index;
     this.http.get(this.categoryListUrl).subscribe(response => {
       this.categoryListData = response;
       this.filterCategoryData = this.categoryListData.filter((p: any) => p.ourWorkId === id);
 
       if (this.filterCategoryData.length > 0) {
-        this.filterCategoryData.forEach((item: any, i: number) => (item.isOpen = i === 0)); // Open the first item only
+        this.filterCategoryData.forEach((item: any, i: number) => (item.isOpen = i === 0)); 
       }
     })
   }
@@ -63,7 +67,10 @@ export class CsrWorkAreasComponent {
 
 
   onClickCsrcatgory(url: any){
-    this.router.navigate(['csr', url]);
-    window.scrollTo(0,0);
+    if(this.categoryName){
+      this.router.navigate(['csr', url]);
+      window.scrollTo(0,0);
+    }
+
   }
 }

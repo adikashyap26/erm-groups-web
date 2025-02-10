@@ -18,9 +18,10 @@ h1 {
 .awards {
     color: var(--erm--neutral-font-color1);
     width: 45%;
-    padding: 5% 3%;
+    padding: 3%;
 }
-.main-img{
+
+.main-img {
     height: 100%;
 }
 
@@ -32,12 +33,29 @@ h1 {
 
 .text {
     width: 300px;
+    top: 50%;
 }
+
+.accomplishment-container  ::ng-deep .slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.accomplishment-container  ::ng-deep .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: var(--erm--neutral-font-color1);
+}
+
+.accomplishment-container  ::ng-deep .slick-dots li button:before {
+    font-size: 12px;
+    color: rgba(217, 217, 217, 1);
+}
+
 
 @media (max-width: 991px) {
 
     .accomplishment {
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .awards {
@@ -47,6 +65,7 @@ h1 {
     .text {
         position: initial;
         width: auto;
+        margin-bottom: 30px;
     }
 
     .text span {
@@ -66,6 +85,18 @@ h1 {
 
 @media (min-width:992px) and (max-width: 1200px) {
     .text {
-        width: 260px;
+        width: 230px;
+    }
+
+    .union-img {
+        display: none;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    h4 {
+        font-size: 35px;
     }
 }

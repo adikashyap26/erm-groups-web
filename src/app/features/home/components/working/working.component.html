@@ -13,7 +13,7 @@
             <h2> ERM Group Works</h2>
             <div class="row work-content py-5">
                 <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4 d-flex content" *ngFor="let item of working; let i=index;">
-                    <div class="pb-5">
+                    <div class="pb-4">
                         <h1><strong>{{item.number}}</strong></h1>
                         <h5 class="py-4">{{item.title}}</h5>
                         <p>{{item.description}}</p>
@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="row reponsive-content py-3">
-                <ngx-slick-carousel class="carousel mt-3" [config]="slideConfig">
+                <ngx-slick-carousel class="carousel " [config]="slideConfig">
                     <div ngxSlickItem *ngFor="let item of working; let i=index;" class="">
-                        <div class="pb-5">
+                        <div>
                             <h1><strong>{{item.number}}</strong></h1>
-                            <h5 class="py-4">{{item.title}}</h5>
+                            <h5 class="py-3">{{item.title}}</h5>
                             <p>{{item.description}}</p>
                         </div>
                     </div>

@@ -74,9 +74,16 @@ h2 {
 .accordion p {
     color: var(--erm-accent-font-color);
 }
-span{
+
+span {
     color: var(--erm-secondary-color-shade3);
     font-weight: 500;
     font-size: 17px;
     cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    img.fan-img {
+        display: none;
+    }
 }

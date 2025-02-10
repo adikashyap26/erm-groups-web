@@ -1,8 +1,10 @@
 <div class="main-container" *ngIf="miningListData">
     <div class="container">
         <div class="row" *ngIf="urlId">
-            <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnail}}"
-                alt="">
+            <div class="curve">
+                <img class="img-fluid"
+                    src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnail}}" alt="">
+            </div>
         </div>
         <div class="row pt-5" *ngIf="miningListData">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
@@ -20,22 +22,22 @@
                     <h4>Reports</h4>
                     <hr>
                     <ng-container *ngIf="reportsData; else nodatafound">
-                        <ng-container *ngFor="let item of reportsData">
-                            <div class="d-flex align-item-end">
-                                <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
-                                <span class="mt-2">&DownArrowBar;</span>
-                            </div>
-                            <p>{{item.year}}</p>
-                            <hr>
-                        </ng-container>
-
+                        <div class="d-flex align-items-end">
+                            <h6 class="me-2" (click)="onClickReport(reportsData._id)">
+                                {{ reportsData.report_name }}
+                            </h6>
+                            <span class="mt-2">&DownArrowBar;</span>
+                        </div>
+                        <p>{{ reportsData.year }}</p>
+                        <hr>
                     </ng-container>
+
                     <ng-template #nodatafound>
-                        <p> No Reports Found</p>
+                        <p>No Reports Found</p>
                     </ng-template>
 
-                    <div class="text-center">
-                        <h6 routerLink="/reports">View More Reports</h6>
+                    <div class="text-center link">
+                        <a routerLink="/reports">View More Reports</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +54,7 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <img class="img-fluid"
+                    <img class="img-fluid curve"
                         src="https://erm-backend-deploy-production.up.railway.app/{{urlId[0]?.thumbnilTwo}}" alt="">
                 </div>
             </div>

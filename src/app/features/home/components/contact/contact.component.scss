@@ -28,7 +28,7 @@ button {
     border: 1px solid var(--erm--neutral-font-color1);
     color: var(--erm--neutral-font-color1);
     border-radius: 8px;
-    padding: 8px 20px;
+    padding: 1% 2%;
 }
 
 .image-container {
@@ -91,6 +91,10 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    button {
+        padding: 2% 5%;
     }
 
     h3 {

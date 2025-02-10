@@ -6,26 +6,26 @@
             </div>
             <div class="col-xl-9 col-lg-9 col-sm-12 col-md-12">
                 <div class="row py-2" *ngIf="filterScientificOperations">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12" *ngIf="filterMiningData[0].lists">
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12" *ngIf="filterMiningData[0].lists">
                         <h3>{{filterMiningData[0].section_title}}</h3>
                         <div *ngFor="let item of filterMiningData[0].lists">
                             <p class="d-flex align-items-start"><img class="img-fluid mt-2 me-2"
                                     src="images/icons/red.svg" alt="">{{item.list_title}}</p>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5" *ngIf="filterMiningData[0].thumbnail">
+                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-6 centerImage" *ngIf="filterMiningData[0].thumbnail">
                         <img class="img-fluid"
                             src="https://erm-backend-deploy-production.up.railway.app/{{filterMiningData[0].thumbnail}}"
                             alt="">
                     </div>
                 </div>
                 <div class="row py-2 filterfeature" *ngIf="filterminenvironment">
-                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5" *ngIf="filterMiningData[1].thumbnail">
+                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-6 centerImage" *ngIf="filterMiningData[1].thumbnail">
                         <img class="img-fluid"
                             src="https://erm-backend-deploy-production.up.railway.app/{{filterMiningData[1].thumbnail}}"
                             alt="">
                     </div>
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12" *ngIf="filterMiningData[1].lists">
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12" *ngIf="filterMiningData[1].lists">
                         <h3>{{filterMiningData[1].section_title}}</h3>
                         <div *ngFor="let item of filterMiningData[1].lists">
                             <p class="d-flex align-items-start"><img class="img-fluid mt-2 me-2"
@@ -34,37 +34,39 @@
                     </div>
                 </div>
                 <div class="row py-2" *ngIf="filterRehabilitation">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12" *ngIf="filterMiningData[2].lists">
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12" *ngIf="filterMiningData[2].lists">
                         <h3>{{filterMiningData[2].section_title}}</h3>
                         <div *ngFor="let item of filterMiningData[2].lists">
                             <p class="d-flex align-items-start"><img class="img-fluid mt-2 me-2"
                                     src="images/icons/red.svg" alt="">{{item.list_title}}</p>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-5" *ngIf="filterMiningData[2].thumbnail">
+                    <div class="col-xl-5 col-lg-5 col-sm-12 col-md-6 centerImage" *ngIf="filterMiningData[2].thumbnail">
                         <img class="img-fluid"
                             src="https://erm-backend-deploy-production.up.railway.app/{{filterMiningData[2].thumbnail}}"
                             alt="">
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="reports mb-4" *ngIf="reportsData">
-                        <h4>Reports</h4>
-                        <hr>
-                        <div *ngFor="let item of reportsData; let i=index;">
-                            <div class="d-flex justify-content-between align-item-end">
-                                <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
-                                <span class="mt-2">&DownArrowBar;</span>
-                            </div>
-                            <p>{{item.year}}</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="reports mb-4" *ngIf="reportsData">
+                            <h4>Reports</h4>
                             <hr>
-                        </div>
-                        <div class="text-center">
-                            <h6>View More Reports</h6>
+                            <div *ngFor="let item of reportsData; let i=index;">
+                                <div class="d-flex justify-content-between align-item-end">
+                                    <h6 class="me-2" (click)="onClickReport(item._id)">{{item.report_name}} </h6>
+                                    <span>&DownArrowBar;</span>
+                                </div>
+                                <p class="mb-1">{{item.year}}</p>
+                                <hr>
+                            </div>
+                            <div class="text-center">
+                                <h6>View More Reports</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

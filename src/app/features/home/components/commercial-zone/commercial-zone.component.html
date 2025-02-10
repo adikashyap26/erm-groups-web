@@ -21,10 +21,10 @@
                       <img class="img-fluid infographic py-3" src="https://erm-backend-deploy-production.up.railway.app/{{ item.thumbnilTwo }}" alt="">
                       <h3>{{ item.sub_title }}</h3>
                       <p>{{ item.sub_description }}</p>
-                      <h5><span>{{ item.buttons }} &rarr;</span></h5>
+                      <a class="button" (click)="onClickRoutes(item.button_link)">{{item.buttons}} &rarr;</a>
                     </div>
                     <div class="banner-carousel">
-                      <img class="img-fluid" src="https://erm-backend-deploy-production.up.railway.app/{{ item.thumbnail }}" alt="">
+                      <img class="img-fluid cImage" loading="lazy" src="https://erm-backend-deploy-production.up.railway.app/{{ item.thumbnail }}" alt="">
                     </div>
                   </div>
                 </div>
